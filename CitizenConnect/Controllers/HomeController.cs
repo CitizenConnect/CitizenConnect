@@ -20,9 +20,16 @@ namespace CitizenConnect.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        public ActionResult Ward()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Your City Council Member.";
+
+            return View();
+        }
+
+        public ActionResult Resources()
+        {
+            ViewBag.Message = "Additional Resourses.";
 
             return View();
         }
