@@ -202,6 +202,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611080104368_InitialCreate.cs" />
+    <Compile Include="Migrations\201611080104368_InitialCreate.Designer.cs">
+      <DependentUpon>201611080104368_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081512478_first and last name.cs" />
+    <Compile Include="Migrations\201611081512478_first and last name.Designer.cs">
+      <DependentUpon>201611081512478_first and last name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611081805280_first and last name with external login.cs" />
+    <Compile Include="Migrations\201611081805280_first and last name with external login.Designer.cs">
+      <DependentUpon>201611081805280_first and last name with external login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -289,6 +302,17 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611080104368_InitialCreate.resx">
+      <DependentUpon>201611080104368_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081512478_first and last name.resx">
+      <DependentUpon>201611081512478_first and last name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611081805280_first and last name with external login.resx">
+      <DependentUpon>201611081805280_first and last name with external login.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
