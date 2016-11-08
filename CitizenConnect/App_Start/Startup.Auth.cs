@@ -54,15 +54,15 @@ namespace CitizenConnect
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "804222113051260",
+               appSecret: "23c80f0ceaf374ffcfd9fe31f7353b84");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "664247384064-amvbfmqmsbu3gfj4f2tbhp9cob13l7vf.apps.googleusercontent.com",
+                ClientSecret = "ZMUrNbXFrY24c6T4_IWXpCCp"
+            });
         }
     }
 }
