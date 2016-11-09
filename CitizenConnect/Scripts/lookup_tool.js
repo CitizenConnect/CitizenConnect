@@ -37,7 +37,9 @@ var pseudo_id = 1;
 function addressSearch() {
     var address = $('#address').val();
     //console.log(address);
-    //$.address.parameter('address', encodeURIComponent(address));
+    //$.address.parameter('address', encodeURIComponent(address));  //original line from MyReps
+
+    //new line for MVC compatibility
     var url = "google.com/whatever?address=" + encodeURI(address)
     //console.log(url);
 
@@ -65,8 +67,9 @@ function addressSearch() {
         var county_people = [];
         var local_people = [];
 
-        console.log("data");
-        console.log(divisions);
+        //console.log(data);
+        //console.log(divisions);
+        console.log(local_people);
 
         if (divisions === undefined) {
             $("#no-response-container").show();
@@ -76,7 +79,7 @@ function addressSearch() {
             setFoundDivisions(divisions);
 
             $.each(divisions, function (division_id, division) {
-                console.log(division.name);
+                //console.log(division.name);
                 if (typeof division.officeIndices !== 'undefined') {
 
                     $.each(division.officeIndices, function (i, office) {
@@ -94,7 +97,7 @@ function addressSearch() {
                                 'division_id': division_id,
                                 'pseudo_id': pseudo_id
                             };
-
+                            console.log("officials")
                             console.log(officials[official])
                             var person = officials[official];
                             info['person'] = person;
@@ -196,117 +199,119 @@ function addressSearch() {
             })
         }
     });
-}
 
-function findMe() {
-    var foundLocation;
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(function (position) {
-            var latitude = position.coords.latitude;
-            var longitude = position.coords.longitude;
-            var accuracy = position.coords.accuracy;
-            var coords = new google.maps.LatLng(latitude, longitude);
 
-            console.log(coords);
+    // ========  GeoLocation =======
+    //function findMe() {
+    //    var foundLocation;
+    //    if (navigator.geolocation) {
+    //        navigator.geolocation.getCurrentPosition(function (position) {
+    //            var latitude = position.coords.latitude;
+    //            var longitude = position.coords.longitude;
+    //            var accuracy = position.coords.accuracy;
+    //            var coords = new google.maps.LatLng(latitude, longitude);
 
-            geocoder.geocode({
-                'location': coords
-            }, function (results, status) {
-                if (status === google.maps.GeocoderStatus.OK) {
-                    if (results[1]) {
-                        $("#address").val(results[1].formatted_address);
-                        addressSearch();
-                    }
-                }
-            });
+    //            console.log(coords);
 
-        }, function error(msg) {
-            alert('Please enable your GPS position feature.');
-        }, {
-            //maximumAge: 600000,
-            //timeout: 5000,
-            enableHighAccuracy: true
+    //            geocoder.geocode({
+    //                'location': coords
+    //            }, function (results, status) {
+    //                if (status === google.maps.GeocoderStatus.OK) {
+    //                    if (results[1]) {
+    //                        $("#address").val(results[1].formatted_address);
+    //                        addressSearch();
+    //                    }
+    //                }
+    //            });
+
+    //        }, function error(msg) {
+    //            alert('Please enable your GPS position feature.');
+    //        }, {
+    //            //maximumAge: 600000,
+    //            //timeout: 5000,
+    //            enableHighAccuracy: true
+    //        });
+    //    } else {
+    //        alert("Geolocation API is not supported in your browser.");
+    //    }
+    //};
+
+    function setFoundDivisions(divisions) {
+
+        // reset the labels
+        $("#state-nav").hide();
+        $("#county-nav").hide();
+        $("#local-nav").hide();
+
+        //console.log(divisions)
+        $.each(divisions, function (division_id, division) {
+            if (state_pattern.test(division_id)) {
+                selected_state = division.name;
+                $("[id^=state-name]").html(selected_state);
+                $("#state-nav").show();
+            }
+            if (county_pattern.test(division_id)) {
+                selected_county = division.name;
+                $("[id^=county-name]").html(selected_county);
+                $("#county-nav").show();
+            }
+            if (local_pattern.test(division_id) || district_pattern.test(division_id)) {
+                selected_local = division.name;
+                $("[id^=local-name]").html(selected_local);
+                $("#local-nav").show();
+            }
         });
-    } else {
-        alert("Geolocation API is not supported in your browser.");
     }
-};
 
-function setFoundDivisions(divisions) {
+    function checkFederal(division_id, office_name) {
+        if (division_id == federal_pattern ||
+            cd_pattern.test(division_id) ||
+            federal_offices.indexOf(office_name.name) >= 0)
+            return true;
+        else
+            return false;
+    }
 
-    // reset the labels
-    $("#state-nav").hide();
-    $("#county-nav").hide();
-    $("#local-nav").hide();
+    function checkState(division_id) {
+        if (state_pattern.test(division_id) ||
+            sl_pattern.test(division_id))
+            return true;
+        else
+            return false;
+    }
 
-    console.log(divisions)
-    $.each(divisions, function (division_id, division) {
-        if (state_pattern.test(division_id)) {
-            selected_state = division.name;
-            $("[id^=state-name]").html(selected_state);
-            $("#state-nav").show();
+    function checkCounty(division_id) {
+        if (county_pattern.test(division_id))
+            return true;
+        else
+            return false;
+    }
+
+    function formatParty(party) {
+        if (party) {
+            if (party == 'Unknown')
+                return '';
+
+            var party_letter = party.charAt(0);
+            var css_class = 'label-ind';
+            if (party_letter == 'D')
+                css_class = 'label-dem';
+            else if (party_letter == 'R')
+                css_class = 'label-rep';
+
+            return "(<span title='" + party + "' class='" + css_class + "'>" + party_letter + "</span>)";
         }
-        if (county_pattern.test(division_id)) {
-            selected_county = division.name;
-            $("[id^=county-name]").html(selected_county);
-            $("#county-nav").show();
-        }
-        if (local_pattern.test(division_id) || district_pattern.test(division_id)) {
-            selected_local = division.name;
-            $("[id^=local-name]").html(selected_local);
-            $("#local-nav").show();
-        }
-    });
-}
-
-function checkFederal(division_id, office_name) {
-    if (division_id == federal_pattern ||
-        cd_pattern.test(division_id) ||
-        federal_offices.indexOf(office_name.name) >= 0)
-        return true;
-    else
-        return false;
-}
-
-function checkState(division_id) {
-    if (state_pattern.test(division_id) ||
-        sl_pattern.test(division_id))
-        return true;
-    else
-        return false;
-}
-
-function checkCounty(division_id) {
-    if (county_pattern.test(division_id))
-        return true;
-    else
-        return false;
-}
-
-function formatParty(party) {
-    if (party) {
-        if (party == 'Unknown')
+        else
             return '';
-
-        var party_letter = party.charAt(0);
-        var css_class = 'label-ind';
-        if (party_letter == 'D')
-            css_class = 'label-dem';
-        else if (party_letter == 'R')
-            css_class = 'label-rep';
-
-        return "(<span title='" + party + "' class='" + css_class + "'>" + party_letter + "</span>)";
     }
-    else
-        return '';
-}
 
-function toTitleCase(str) {
-    return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
-}
+    function toTitleCase(str) {
+        return str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+    }
 
-//converts a slug or query string in to readable text
-function convertToPlainString(text) {
-    if (text === undefined) return '';
-    return decodeURIComponent(text);
+    //converts a slug or query string in to readable text
+    function convertToPlainString(text) {
+        if (text === undefined) return '';
+        return decodeURIComponent(text);
+    }
 }
