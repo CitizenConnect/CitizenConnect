@@ -255,3 +255,4 @@ paket-files/
 CitizenConnect/CitizenConnect.csproj
 *.cache
 CitizenConnect/Scripts/_references.js
+*.cache
