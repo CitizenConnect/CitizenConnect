@@ -252,3 +252,6 @@ paket-files/
 *.sln.iml
 *.cache
 *.cache
+CitizenConnect/CitizenConnect.csproj
+*.cache
+CitizenConnect/Scripts/_references.js

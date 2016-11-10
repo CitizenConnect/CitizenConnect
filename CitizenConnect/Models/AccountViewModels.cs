@@ -6,6 +6,14 @@ namespace CitizenConnect.Models
     public class ExternalLoginConfirmationViewModel
     {
         [Required]
+        [Display(Name = "First Name")]
+        public string userFirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string userLastName { get; set; }
+
+        [Required]
         [Display(Name = "Email")]
         public string Email { get; set; }
     }
@@ -64,6 +72,14 @@ namespace CitizenConnect.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [Display(Name = "First Name")]
+        public string userFirstName { get; set; }
+
+        [Required]
+        [Display(Name = "Last Name")]
+        public string userLastName { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
