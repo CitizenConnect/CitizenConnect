@@ -36,11 +36,11 @@ var pseudo_id = 1;
 
 function addressSearch() {
     var address = $('#address').val();
-    //console.log(address);
+    //These lines correct the address line to avoid submitting invalid request see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
     //$.address.parameter('address', encodeURIComponent(address));  //original line from MyReps
 
     //new line for MVC compatibility
-    var url = "google.com/whatever?address=" + encodeURI(address)
+    //var url = "google.com/whatever?address=" + encodeURI(address)
     //console.log(url);
 
     var params = {
@@ -71,6 +71,7 @@ function addressSearch() {
         //console.log(divisions);
         console.log(local_people);
 
+        //determines which container to display for each political division
         if (divisions === undefined) {
             $("#no-response-container").show();
             $("#response-container").hide();
@@ -97,8 +98,7 @@ function addressSearch() {
                                 'division_id': division_id,
                                 'pseudo_id': pseudo_id
                             };
-                            console.log("officials")
-                            console.log(officials[official])
+                            //console.log(officials[official])
                             var person = officials[official];
                             info['person'] = person;
 
