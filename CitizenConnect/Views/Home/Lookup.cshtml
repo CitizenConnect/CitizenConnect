@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "Lookup";
+}
+
+<h2>Lookup</h2>
+
+<!-- API call for Autocomplete places -->
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc&libraries=places"></script>
+<!-- script to autocomplete address as entered -->
+<script type="text/javascript">
+        google.maps.event.addDomListener(window, 'load', function () {
+            var places = new google.maps.places.Autocomplete(document.getElementById('address'));
+            google.maps.event.addListener(places, 'place_changed', function () {
+                var place = places.getPlace();
+                var address = place.formatted_address;
+                var latitude = place.geometry.location.lat();
+                //var longitude = place.geometry.location.lng();
+                //var mesg = "Address: " + address;
+                //mesg += "\nLatitude: " + latitude;
+                //mesg += "\nLongitude: " + longitude;
+                //alert(mesg);
+                addressSearch();
+
+            });
+        });
+</script>
+
+<!--$(function() {
+
+        $("#address").val(convertToPlainString($.address.parameter('address')));
+        console.log(address);
+      if ($("#address").val())
+        addressSearch();
+
+      $('#address-search').click(function(){
+        addressSearch();
+      });
+
+      $("#results-nav a").click(function(e) {
+        e.preventDefault();
+        var scroll_to = $($("#" + e.target.id).attr('href'));
+        $('html, body').animate({
+            scrollTop: scroll_to.offset().top
+        }, 1000);
+      });
+
+      $('#find-me').click(function(){
+        findMe();
+        return false;
+      });
+
+      $(":text").keydown(function(e){
+          var key =  e.keyCode ? e.keyCode : e.which;
+          if(key === 13) {
+              $('#address-search').click();
+              return false;
+          }
+      });
+    });
+  //]]>
+</script>-->
+
+@* Generates Input Filed for address *@
+<span>Location:</span>
+<input type="text" id="address" style="width: 250px" placeholder="Enter a location" />

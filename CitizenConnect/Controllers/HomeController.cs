@@ -33,5 +33,11 @@ namespace CitizenConnect.Controllers
 
             return View();
         }
+        public ActionResult Lookup()
+        {
+            ViewBag.Message = "Address Lookup Page.";
+
+            return View();
+        }
     }
 }
