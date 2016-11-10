@@ -199,6 +199,8 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ReportTypesController.cs" />
+    <Compile Include="Controllers\ReportViewsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -214,10 +216,15 @@
     <Compile Include="Migrations\201611081805280_first and last name with external login.Designer.cs">
       <DependentUpon>201611081805280_first and last name with external login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611101941379_reports.cs" />
+    <Compile Include="Migrations\201611101941379_reports.Designer.cs">
+      <DependentUpon>201611101941379_reports.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ReportType.cs" />
     <Compile Include="Models\ReportView.cs" />
     <Compile Include="Models\WardInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -306,6 +313,16 @@
     <Content Include="Views\Home\Lookup.cshtml" />
     <Content Include="Views\Home\Ward.cshtml" />
     <Content Include="Views\Home\Resources.cshtml" />
+    <Content Include="Views\ReportTypes\Create.cshtml" />
+    <Content Include="Views\ReportTypes\Delete.cshtml" />
+    <Content Include="Views\ReportTypes\Details.cshtml" />
+    <Content Include="Views\ReportTypes\Edit.cshtml" />
+    <Content Include="Views\ReportTypes\Index.cshtml" />
+    <Content Include="Views\ReportViews\Create.cshtml" />
+    <Content Include="Views\ReportViews\Delete.cshtml" />
+    <Content Include="Views\ReportViews\Details.cshtml" />
+    <Content Include="Views\ReportViews\Edit.cshtml" />
+    <Content Include="Views\ReportViews\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -325,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611081805280_first and last name with external login.resx">
       <DependentUpon>201611081805280_first and last name with external login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611101941379_reports.resx">
+      <DependentUpon>201611101941379_reports.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
