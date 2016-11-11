@@ -40,10 +40,6 @@ namespace CitizenConnect.Controllers
 
             return View();
         }
-        public JsonResult GetWardInfo()
-        {
-            WardInfo ward = new WardInfo();
-            return Json(ward.getWardInfo(), JsonRequestBehavior.AllowGet);
-        }
+      
     }
 }

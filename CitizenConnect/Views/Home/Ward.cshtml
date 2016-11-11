@@ -2,20 +2,14 @@
 @{
     ViewBag.Title = "Ward";
 }
-
+<script src="~/Scripts/lookup_tool.js"></script>
 <h2>Ward</h2>
-<script src = "~/Scripts/lookup_tool.js" ></script>
-
 <body>
     @* Generates Input Filed for address *@
     <span>Location:</span>
     <input type="text" id="address" style="width: 250px" placeholder="Enter a location" />
+   <div id="WardNumber"></div>
 
-    <button>Get Ward</button>
-
-    <div class="col-md-12">
-        Your Ward<span data-bind="info:division_id"></span>
-    </div>
     <!-- API call for Autocomplete places -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc&libraries=places"></script>
     <!-- script to autocomplete address as entered -->
@@ -25,29 +19,12 @@
             google.maps.event.addListener(places, 'place_changed', function () {
                 var place = places.getPlace();
                 var address = place.formatted_address;
-                var latitude = place.geometry.location.lat();
-                //var longitude = place.geometry.location.lng();
-                //var mesg = "Address: " + address;
-                //mesg += "\nLatitude: " + latitude;
-                //mesg += "\nLongitude: " + longitude;
-                //alert(mesg);
                 addressSearch();
-
             });
         });
-    var ward = Object();
-    $(document).ready(function () {
-        $("button").click(function () {
-            $.get("@Url.Action("WardInfo","Home")", function (response) {
-                //response
-                console.log(response);
-                ward = ko.mapping.fromJS(response);//populate the ward object
-                ko.applyBindings(ward);
 
-            });
-        });
-    });
     </script>
-    <iframe width="500" height="950" src="https://elections.withgoogle.com/us/pollingplace"></iframe>
+    @* Polling Place finder to be used for future elections *@
+    @*<iframe width="500" height="950" src="https://elections.withgoogle.com/us/pollingplace"></iframe>*@
 
 </body>
