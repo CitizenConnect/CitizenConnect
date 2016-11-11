@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CitizenConnect.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -38,6 +39,11 @@ namespace CitizenConnect.Controllers
             ViewBag.Message = "Address Lookup Page.";
 
             return View();
+        }
+        public JsonResult GetWardInfo()
+        {
+            WardInfo ward = new WardInfo();
+            return Json(ward.getWardInfo(), JsonRequestBehavior.AllowGet);
         }
     }
 }
