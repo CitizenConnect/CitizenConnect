@@ -10,7 +10,6 @@ namespace CitizenConnect.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "CitizenConnect.Models.ApplicationDbContext";
         }
 
         protected override void Seed(CitizenConnect.Models.ApplicationDbContext context)

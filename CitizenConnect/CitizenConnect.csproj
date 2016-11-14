@@ -204,33 +204,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611080104368_InitialCreate.cs" />
-    <Compile Include="Migrations\201611080104368_InitialCreate.Designer.cs">
-      <DependentUpon>201611080104368_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611081512478_first and last name.cs" />
-    <Compile Include="Migrations\201611081512478_first and last name.Designer.cs">
-      <DependentUpon>201611081512478_first and last name.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611081805280_first and last name with external login.cs" />
-    <Compile Include="Migrations\201611081805280_first and last name with external login.Designer.cs">
-      <DependentUpon>201611081805280_first and last name with external login.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611101941379_reports.cs" />
-    <Compile Include="Migrations\201611101941379_reports.Designer.cs">
-      <DependentUpon>201611101941379_reports.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611111939204_updates.cs" />
-    <Compile Include="Migrations\201611111939204_updates.Designer.cs">
-      <DependentUpon>201611111939204_updates.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611141835309_addingaddressproperties.cs" />
-    <Compile Include="Migrations\201611141835309_addingaddressproperties.Designer.cs">
-      <DependentUpon>201611141835309_addingaddressproperties.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611141854540_removedNumberZipETCAndAddedIDandAddressString.cs" />
-    <Compile Include="Migrations\201611141854540_removedNumberZipETCAndAddedIDandAddressString.Designer.cs">
-      <DependentUpon>201611141854540_removedNumberZipETCAndAddedIDandAddressString.cs</DependentUpon>
+    <Compile Include="Migrations\201611141948064_merging.cs" />
+    <Compile Include="Migrations\201611141948064_merging.Designer.cs">
+      <DependentUpon>201611141948064_merging.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -346,26 +322,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611080104368_InitialCreate.resx">
-      <DependentUpon>201611080104368_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611081512478_first and last name.resx">
-      <DependentUpon>201611081512478_first and last name.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611081805280_first and last name with external login.resx">
-      <DependentUpon>201611081805280_first and last name with external login.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611101941379_reports.resx">
-      <DependentUpon>201611101941379_reports.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611111939204_updates.resx">
-      <DependentUpon>201611111939204_updates.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611141835309_addingaddressproperties.resx">
-      <DependentUpon>201611141835309_addingaddressproperties.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611141854540_removedNumberZipETCAndAddedIDandAddressString.resx">
-      <DependentUpon>201611141854540_removedNumberZipETCAndAddedIDandAddressString.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611141948064_merging.resx">
+      <DependentUpon>201611141948064_merging.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

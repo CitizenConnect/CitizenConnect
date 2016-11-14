@@ -7,13 +7,13 @@ namespace CitizenConnect.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class reports : IMigrationMetadata
+    public sealed partial class merging : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(reports));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(merging));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611101941379_reports"; }
+            get { return "201611141948064_merging"; }
         }
         
         string IMigrationMetadata.Source
