@@ -11,8 +11,8 @@ namespace CitizenConnect.Models
     {
         [Key]
         public int ReportID { get; set; }
-        public float Longitude { get; set; }
-        public float Latitude { get; set; }
+        public string Longitude { get; set; }
+        public string Latitude { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 

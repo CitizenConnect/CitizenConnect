@@ -50,6 +50,8 @@ namespace CitizenConnect.Controllers
         {
             if (ModelState.IsValid)
             {
+                //string latitude = hfLat.Value;
+                //reportView.Longitude = hdnLongName.Value;
                 db.ReportViews.Add(reportView);
                 db.SaveChanges();
                 return RedirectToAction("Index");

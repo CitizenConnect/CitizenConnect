@@ -6,29 +6,11 @@
 
 <h2>Create</h2>
 
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>ReportView</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-        <span>Location:</span>
-        <input type="text" id="address" style="width: 250px" placeholder="Enter a location" />
-
-
-
-
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-        </div>
-    </div>
-
-    <!-- API call for Autocomplete places -->
+        <!-- API call for Autocomplete places -->
     <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc&libraries=places"></script>
     <!-- script to autocomplete address as entered -->
     <script type="text/javascript">
@@ -39,15 +21,37 @@
                 var address = place.formatted_address;
                 var latitude = place.geometry.location.lat();
                 var longitude = place.geometry.location.lng();
-                //var mesg = "Address: " + address;
-                //mesg += "\nLatitude: " + latitude;
-                //mesg += "\nLongitude: " + longitude;
-                //alert(mesg);
+                $("#hdnLatitude") = latitude;
+                $("#hdnLongitude") = longitude;
+
+                var mesg = "Address: " + address;
+                mesg += "\nLatitude: " + latitude;
+                mesg += "\nLongitude: " + longitude;
+                alert(mesg);
                 addressSearch();
 
             });
         });
     </script>
+
+    <div class="form-horizontal">
+        <h4>ReportView</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <span>Location:</span>
+        <input type="text" id="address" style="width: 250px" placeholder="Enter a location" />
+        
+        @Html.HiddenFor(model => model.Longitude, new { @Value = "#hdnLongitude"})
+        @Html.HiddenFor(model => model.Latitude, new { @Value = "#hdnLatitude",})
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+
+
 }
 
 <div>
