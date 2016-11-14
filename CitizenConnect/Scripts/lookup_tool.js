@@ -198,18 +198,35 @@ function addressSearch() {
         local_people.sort(function (a, b) {
             return (a.office.name) - (b.office.name);
         });
-        var ward = (local_people[0].office.name);
-        var councilPerson = (local_people[0].person.name);
-        var councilEmail = (local_people[0].person.emails[0]);
-        var councilPhone = (local_people[0].person.phones[0]);
-        //var cityHallAddress = (local_people[0].person.address[0]);
-        var cityCouncilWebsite = (local_people[0].urls[0]);
-        document.getElementById("WardNumber").innerHTML = ward;
-        document.getElementById("CouncilPerson").innerHTML = councilPerson;
-        document.getElementById("CouncilEmail").innerHTML = councilEmail;
-        document.getElementById("CouncilPhone").innerHTML = councilPhone;
-        //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-        document.getElementById("CityCouncilWebsite").innerHTML = cityCouncilWebsite;
+        if (local_people[0] == undefined) //does not contain 'Ward' display not found message  
+        {
+            document.getElementById("WardNumber").innerHTML = "No Cleveland City Ward assignment found";
+
+        }
+        else
+        {
+            if (local_people[0].office.name.includes("Ward"))
+            {
+                var ward = (local_people[0].office.name);
+                var councilPerson = (local_people[0].person.name);
+                var councilEmail = (local_people[0].person.emails[0]);
+                var councilPhone = (local_people[0].person.phones[0]);
+                //var cityHallAddress = (local_people[0].person.address[0]);
+                var cityCouncilWebsite = (local_people[0].urls[0]);
+                document.getElementById("WardNumber").innerHTML = ward;
+                document.getElementById("CouncilPerson").innerHTML = councilPerson;
+                document.getElementById("CouncilEmail").innerHTML = councilEmail;
+                document.getElementById("CouncilPhone").innerHTML = councilPhone;
+                //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
+                document.getElementById("CityCouncilWebsite").innerHTML = cityCouncilWebsite;
+            }
+            else
+            {
+                document.getElementById("WardNumber").innerHTML = "No Cleveland City Ward assignment found";
+
+            }
+
+        }
 
         return [local_people[0]];
         
