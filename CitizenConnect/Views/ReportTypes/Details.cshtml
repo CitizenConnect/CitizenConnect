@@ -1,0 +1,26 @@
+﻿@model CitizenConnect.Models.ReportType
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ReportType</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReportTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReportTypeName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReportTypeID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
