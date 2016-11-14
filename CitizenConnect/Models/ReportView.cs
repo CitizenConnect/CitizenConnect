@@ -13,6 +13,8 @@ namespace CitizenConnect.Models
         public int ReportID { get; set; }
         public string Longitude { get; set; }
         public string Latitude { get; set; }
+        public string PlaceID { get; set; }
+        public string AddressString { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 

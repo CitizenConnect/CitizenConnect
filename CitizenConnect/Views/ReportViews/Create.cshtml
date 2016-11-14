@@ -18,16 +18,19 @@
             var places = new google.maps.places.Autocomplete(document.getElementById('address'));
             google.maps.event.addListener(places, 'place_changed', function () {
                 var place = places.getPlace();
+                //var MyplaceID = place_id;
                 var address = place.formatted_address;
                 var latitude = place.geometry.location.lat();
                 var longitude = place.geometry.location.lng();
-                $("#hdnLatitude") = latitude;
-                $("#hdnLongitude") = longitude;
+                $("#hdnLatitude").val(latitude);
+                $("#hdnLongitude").val(longitude);
+                $("#hdnAddress").val(address)
 
-                var mesg = "Address: " + address;
-                mesg += "\nLatitude: " + latitude;
-                mesg += "\nLongitude: " + longitude;
-                alert(mesg);
+
+                //var mesg = "Address: " + address;
+                //mesg += "\nLatitude: " + latitude;
+                //mesg += "\nLongitude: " + longitude;
+                //alert(mesg);
                 addressSearch();
 
             });
@@ -41,9 +44,11 @@
 
         <span>Location:</span>
         <input type="text" id="address" style="width: 250px" placeholder="Enter a location" />
-        
-        @Html.HiddenFor(model => model.Longitude, new { @Value = "#hdnLongitude"})
-        @Html.HiddenFor(model => model.Latitude, new { @Value = "#hdnLatitude",})
+       
+
+        @Html.HiddenFor(model => model.Longitude, new { id = "hdnLongitude"})
+        @Html.HiddenFor(model => model.Latitude, new { id = "hdnLatitude",})
+        @Html.HiddenFor(model => model.AddressString, new { id = "hdnAddress", })
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />

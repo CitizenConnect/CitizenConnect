@@ -46,12 +46,11 @@ namespace CitizenConnect.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReportID,Longitude,Latitude,ReportTypeID")] ReportView reportView)
+        public ActionResult Create([Bind(Include = "ReportID,Longitude,AddressString,PlaceID,Latitude,ReportTypeID")] ReportView reportView)
         {
             if (ModelState.IsValid)
             {
-                //string latitude = hfLat.Value;
-                //reportView.Longitude = hdnLongName.Value;
+                
                 db.ReportViews.Add(reportView);
                 db.SaveChanges();
                 return RedirectToAction("Index");

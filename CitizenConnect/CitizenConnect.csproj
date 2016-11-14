@@ -224,6 +224,14 @@
     <Compile Include="Migrations\201611111939204_updates.Designer.cs">
       <DependentUpon>201611111939204_updates.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611141835309_addingaddressproperties.cs" />
+    <Compile Include="Migrations\201611141835309_addingaddressproperties.Designer.cs">
+      <DependentUpon>201611141835309_addingaddressproperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611141854540_removedNumberZipETCAndAddedIDandAddressString.cs" />
+    <Compile Include="Migrations\201611141854540_removedNumberZipETCAndAddedIDandAddressString.Designer.cs">
+      <DependentUpon>201611141854540_removedNumberZipETCAndAddedIDandAddressString.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -352,6 +360,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611111939204_updates.resx">
       <DependentUpon>201611111939204_updates.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141835309_addingaddressproperties.resx">
+      <DependentUpon>201611141835309_addingaddressproperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611141854540_removedNumberZipETCAndAddedIDandAddressString.resx">
+      <DependentUpon>201611141854540_removedNumberZipETCAndAddedIDandAddressString.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
