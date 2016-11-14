@@ -201,7 +201,7 @@ function addressSearch() {
         if (local_people[0] == undefined) //does not contain 'Ward' display not found message  
         {
             document.getElementById("WardNumber").innerHTML = "No Cleveland City Ward assignment found";
-
+            document.getElementById("CityCouncilWebsite").innerHTML = "http://www.clevelandcitycouncil.org/find-my-ward";
         }
         else
         {
@@ -223,7 +223,7 @@ function addressSearch() {
             else
             {
                 document.getElementById("WardNumber").innerHTML = "No Cleveland City Ward assignment found";
-
+                document.getElementById("CityCouncilWebsite").innerHTML = "http://www.clevelandcitycouncil.org/find-my-ward";
             }
 
         }
