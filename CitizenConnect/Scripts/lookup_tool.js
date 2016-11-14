@@ -1,4 +1,5 @@
-﻿//var geocoder = new google.maps.Geocoder;
+﻿//location service based lookup
+//var geocoder = new google.maps.Geocoder;
 //Citizens Connect's API
 var API_KEY = 'AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc';
 var INFO_API = 'https://www.googleapis.com/civicinfo/v2/representatives';
@@ -39,10 +40,6 @@ function addressSearch() {
     //These lines correct the address line to avoid submitting invalid request see: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent
     //$.address.parameter('address', encodeURIComponent(address));  //original line from MyReps
 
-    //new line for MVC compatibility
-    //var url = "google.com/whatever?address=" + encodeURI(address)
-    //console.log(url);
-
     var params = {
         'key': API_KEY,
         'address': address
@@ -67,9 +64,8 @@ function addressSearch() {
         var county_people = [];
         var local_people = [];
 
-        //console.log(data);
-        //console.log(divisions);
         console.log(local_people);
+       
 
         //determines which container to display for each political division
         if (divisions === undefined) {
@@ -80,7 +76,7 @@ function addressSearch() {
             setFoundDivisions(divisions);
 
             $.each(divisions, function (division_id, division) {
-                //console.log(division.name);
+               
                 if (typeof division.officeIndices !== 'undefined') {
 
                     $.each(division.officeIndices, function (i, office) {
@@ -98,7 +94,7 @@ function addressSearch() {
                                 'division_id': division_id,
                                 'pseudo_id': pseudo_id
                             };
-                            //console.log(officials[official])
+                            
                             var person = officials[official];
                             info['person'] = person;
 
@@ -198,8 +194,29 @@ function addressSearch() {
                 $('#contactModal').modal('show');
             })
         }
-    });
+        //============== this pulls out the council ward number============== 
+        local_people.sort(function (a, b) {
+            return (a.office.name) - (b.office.name);
+        });
+        var ward = (local_people[0].office.name);
+        var councilPerson = (local_people[0].person.name);
+        var councilEmail = (local_people[0].person.emails[0]);
+        var councilPhone = (local_people[0].person.phones[0]);
+        //var cityHallAddress = (local_people[0].person.address[0]);
+        var cityCouncilWebsite = (local_people[0].urls[0]);
+        document.getElementById("WardNumber").innerHTML = ward;
+        document.getElementById("CouncilPerson").innerHTML = councilPerson;
+        document.getElementById("CouncilEmail").innerHTML = councilEmail;
+        document.getElementById("CouncilPhone").innerHTML = councilPhone;
+        //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
+        document.getElementById("CityCouncilWebsite").innerHTML = cityCouncilWebsite;
 
+        return [local_people[0]];
+        
+    });
+ 
+
+}
 
     // ========  GeoLocation =======
     //function findMe() {
@@ -243,7 +260,6 @@ function addressSearch() {
         $("#county-nav").hide();
         $("#local-nav").hide();
 
-        //console.log(divisions)
         $.each(divisions, function (division_id, division) {
             if (state_pattern.test(division_id)) {
                 selected_state = division.name;
@@ -314,4 +330,4 @@ function addressSearch() {
         if (text === undefined) return '';
         return decodeURIComponent(text);
     }
-}
+  
