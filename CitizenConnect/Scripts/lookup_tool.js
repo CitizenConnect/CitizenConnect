@@ -199,8 +199,20 @@ function addressSearch() {
             return (a.office.name) - (b.office.name);
         });
         var ward = (local_people[0].office.name);
+        var councilPerson = (local_people[0].person.name);
+        var councilEmail = (local_people[0].person.emails[0]);
+        var councilPhone = (local_people[0].person.phones[0]);
+        //var cityHallAddress = (local_people[0].person.address[0]);
+        var cityCouncilWebsite = (local_people[0].urls[0]);
         document.getElementById("WardNumber").innerHTML = ward;
-        return ward;
+        document.getElementById("CouncilPerson").innerHTML = councilPerson;
+        document.getElementById("CouncilEmail").innerHTML = councilEmail;
+        document.getElementById("CouncilPhone").innerHTML = councilPhone;
+        //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
+        document.getElementById("CityCouncilWebsite").innerHTML = cityCouncilWebsite;
+
+        return [local_people[0]];
+        
     });
  
 
