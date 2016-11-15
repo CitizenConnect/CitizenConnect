@@ -27,12 +27,14 @@ namespace CitizenConnect.Controllers
         }
 
         // GET: ReportViews
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.ReportViews.ToList());
         }
 
         // GET: ReportViews/Details/5
+        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -48,6 +50,7 @@ namespace CitizenConnect.Controllers
         }
 
         // GET: ReportViews/Create
+        [Authorize]
         public ActionResult Create()
         {
             ViewBag.ReportTypeID = new SelectList(db.ReportTypes, "ReportTypeID", "ReportTypeName");
@@ -57,6 +60,7 @@ namespace CitizenConnect.Controllers
         // POST: ReportViews/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ReportID,Longitude,AddressString,PlaceID,Latitude,ReportTypeID,TimeStamp")] ReportView reportView)
@@ -76,6 +80,7 @@ namespace CitizenConnect.Controllers
         }
 
         // GET: ReportViews/Edit/5
+        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -93,6 +98,7 @@ namespace CitizenConnect.Controllers
         // POST: ReportViews/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "ReportID,Longitude,Latitude,ReportTypeID")] ReportView reportView)
@@ -107,6 +113,7 @@ namespace CitizenConnect.Controllers
         }
 
         // GET: ReportViews/Delete/5
+        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -122,6 +129,7 @@ namespace CitizenConnect.Controllers
         }
 
         // POST: ReportViews/Delete/5
+        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
