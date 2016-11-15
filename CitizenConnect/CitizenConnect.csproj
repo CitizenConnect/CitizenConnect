@@ -233,6 +233,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\stephen-page.jpg" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
     <Content Include="Scripts\ejs_production.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
