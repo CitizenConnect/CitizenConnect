@@ -36,5 +36,7 @@ namespace CitizenConnect.Models
         public System.Data.Entity.DbSet<CitizenConnect.Models.ReportType> ReportTypes { get; set; }
 
         public System.Data.Entity.DbSet<CitizenConnect.Models.ReportView> ReportViews { get; set; }
+
+        public System.Data.Entity.DbSet<CitizenConnect.Models.ProjectView> ProjectViews { get; set; }
     }
 }

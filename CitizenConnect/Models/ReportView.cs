@@ -15,6 +15,7 @@ namespace CitizenConnect.Models
         public string Latitude { get; set; }
         public string PlaceID { get; set; }
         public string AddressString { get; set; }
+        public DateTime TimeStamp { get; set; }
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 
