@@ -22,3 +22,40 @@ select,
 textarea {
     max-width: 280px;
 }
+h2 {
+    text-align: center;
+    font-size:22px;
+    color:black;
+}
+h6#submitButton {
+    text-align:center;
+    font-size: 15px;
+    color:black;
+    
+  }
+
+button {
+    border-radius:6px;
+    padding:10px;
+}
+
+h1#appName {
+    text-align:center;
+    font-size:60px;
+    color:black;
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 0px;
+    }
+
+/*div#landingPage {
+    background-image: url('Image/smartphone.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    border-radius:5px;
+    width:900px;
+    height:550px;
+    background-position:center;
+    margin:50px
+    }*/
+
