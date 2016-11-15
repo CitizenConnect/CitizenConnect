@@ -7,12 +7,24 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CitizenConnect.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CitizenConnect.Controllers
 {
     public class ReportViewsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        private ApplicationUser CurrentUser
+        {
+            get
+            {
+                UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                ApplicationUser currentUser = UserManager.FindById(User.Identity.GetUserId());
+                return currentUser;
+            }
+        }
 
         // GET: ReportViews
         public ActionResult Index()
@@ -38,6 +50,7 @@ namespace CitizenConnect.Controllers
         // GET: ReportViews/Create
         public ActionResult Create()
         {
+            ViewBag.ReportTypeID = new SelectList(db.ReportTypes, "ReportTypeID", "ReportTypeName");
             return View();
         }
 
@@ -48,6 +61,7 @@ namespace CitizenConnect.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ReportID,Longitude,AddressString,PlaceID,Latitude,ReportTypeID")] ReportView reportView)
         {
+            reportView.ApplicationUser = CurrentUser;
             if (ModelState.IsValid)
             {
                 
@@ -56,6 +70,7 @@ namespace CitizenConnect.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.ReportTypeID = new SelectList(db.ReportTypes, "ReportTypeID", "ReportTypeName", reportView.ReportTypeID);
             return View(reportView);
         }
 

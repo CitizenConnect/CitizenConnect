@@ -18,7 +18,8 @@ namespace CitizenConnect.Models
 
         public virtual ApplicationUser ApplicationUser { get; set; }
 
-        
+        [ForeignKey("ReportType")]
         public int ReportTypeID { get; set; }
+        public virtual ReportType ReportType { get; set; }
     }
 }

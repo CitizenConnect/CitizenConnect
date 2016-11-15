@@ -208,6 +208,10 @@
     <Compile Include="Migrations\201611141948064_merging.Designer.cs">
       <DependentUpon>201611141948064_merging.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611150006404_ReportTypes.cs" />
+    <Compile Include="Migrations\201611150006404_ReportTypes.Designer.cs">
+      <DependentUpon>201611150006404_ReportTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
@@ -325,6 +329,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611141948064_merging.resx">
       <DependentUpon>201611141948064_merging.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611150006404_ReportTypes.resx">
+      <DependentUpon>201611150006404_ReportTypes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
