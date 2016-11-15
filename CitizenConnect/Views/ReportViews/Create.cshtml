@@ -44,11 +44,18 @@
 
         <span>Location:</span>
         <input type="text" id="address" style="width: 250px" placeholder="Enter a location" />
-       
-
-        @Html.HiddenFor(model => model.Longitude, new { id = "hdnLongitude"})
-        @Html.HiddenFor(model => model.Latitude, new { id = "hdnLatitude",})
+        @Html.HiddenFor(model => model.Longitude, new { id = "hdnLongitude" })
+        @Html.HiddenFor(model => model.Latitude, new { id = "hdnLatitude", })
         @Html.HiddenFor(model => model.AddressString, new { id = "hdnAddress", })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReportType.ReportTypeName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("ReportTypeID", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.ReportTypeID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
