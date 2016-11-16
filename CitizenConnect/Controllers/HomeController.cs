@@ -40,6 +40,12 @@ namespace CitizenConnect.Controllers
 
             return View();
         }
-      
+        public ActionResult CouncilCalendar()
+        {
+            ViewBag.Message = "City Council Calendar.";
+
+            return View();
+        }
+
     }
 }

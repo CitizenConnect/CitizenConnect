@@ -338,6 +338,7 @@
     <Content Include="Views\InterestedVolunteers\Details.cshtml" />
     <Content Include="Views\InterestedVolunteers\Edit.cshtml" />
     <Content Include="Views\InterestedVolunteers\Index.cshtml" />
+    <Content Include="Views\Home\CouncilCalendar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
