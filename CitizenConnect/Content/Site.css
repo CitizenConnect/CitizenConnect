@@ -69,7 +69,14 @@ h1#appName {
     margin-right: 150px;
     margin-top: 0px;
     }
+#map_canvas {
+  width: 500px;
+  height: 500px;
+}
 
+#current {
+  padding-top: 25px;
+}
 /*div#landingPage {
     background-image: url('Image/smartphone.jpg');
     background-size:cover;
