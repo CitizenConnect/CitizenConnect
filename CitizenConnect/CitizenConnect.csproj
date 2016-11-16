@@ -206,37 +206,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611141948064_merging.cs" />
-    <Compile Include="Migrations\201611141948064_merging.Designer.cs">
-      <DependentUpon>201611141948064_merging.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611150006404_ReportTypes.cs" />
-    <Compile Include="Migrations\201611150006404_ReportTypes.Designer.cs">
-      <DependentUpon>201611150006404_ReportTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611151537475_ProjectViewTable.cs" />
-    <Compile Include="Migrations\201611151537475_ProjectViewTable.Designer.cs">
-      <DependentUpon>201611151537475_ProjectViewTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611151648475_timestampForReports.cs" />
-    <Compile Include="Migrations\201611151648475_timestampForReports.Designer.cs">
-      <DependentUpon>201611151648475_timestampForReports.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611161528216_InterestedVolunteer.cs" />
-    <Compile Include="Migrations\201611161528216_InterestedVolunteer.Designer.cs">
-      <DependentUpon>201611161528216_InterestedVolunteer.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611161530451_AddedBoolOption.cs" />
-    <Compile Include="Migrations\201611161530451_AddedBoolOption.Designer.cs">
-      <DependentUpon>201611161530451_AddedBoolOption.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611161552442_AddedPrimaryKey.cs" />
-    <Compile Include="Migrations\201611161552442_AddedPrimaryKey.Designer.cs">
-      <DependentUpon>201611161552442_AddedPrimaryKey.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611161614298_debugging.cs" />
-    <Compile Include="Migrations\201611161614298_debugging.Designer.cs">
-      <DependentUpon>201611161614298_debugging.cs</DependentUpon>
+    <Compile Include="Migrations\201611161648246_rebuild database after merge.cs" />
+    <Compile Include="Migrations\201611161648246_rebuild database after merge.Designer.cs">
+      <DependentUpon>201611161648246_rebuild database after merge.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -377,29 +349,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611141948064_merging.resx">
-      <DependentUpon>201611141948064_merging.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611150006404_ReportTypes.resx">
-      <DependentUpon>201611150006404_ReportTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611151537475_ProjectViewTable.resx">
-      <DependentUpon>201611151537475_ProjectViewTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611151648475_timestampForReports.resx">
-      <DependentUpon>201611151648475_timestampForReports.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611161528216_InterestedVolunteer.resx">
-      <DependentUpon>201611161528216_InterestedVolunteer.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611161530451_AddedBoolOption.resx">
-      <DependentUpon>201611161530451_AddedBoolOption.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611161552442_AddedPrimaryKey.resx">
-      <DependentUpon>201611161552442_AddedPrimaryKey.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611161614298_debugging.resx">
-      <DependentUpon>201611161614298_debugging.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611161648246_rebuild database after merge.resx">
+      <DependentUpon>201611161648246_rebuild database after merge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
