@@ -233,6 +233,8 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\darin-meraz.jpg" />
+    <Content Include="Images\sarah-kaminski.jpg" />
     <Content Include="Images\stephen-page.jpg" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
     <Content Include="Scripts\ejs_production.js" />
