@@ -10,55 +10,53 @@
 {
     @Html.AntiForgeryToken()
 
-    <script>        
-            function initMap() {
-                var map = new google.maps.Map(document.getElementById('map_canvas'), {
-                    zoom: 14,
-                    center: new google.maps.LatLng(41.500, -81.694),
-                    mapTypeId: google.maps.MapTypeId.ROADMAP
-                });
+    <script>
+        function initMap() {
+            var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                zoom: 14,
+                center: new google.maps.LatLng(41.500, -81.694),
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            });
 
-                var myMarker = new google.maps.Marker({
-                    position: new google.maps.LatLng(41.500, -81.694),
-                    draggable: true,
-                    map: map
-                });
-                google.maps.event.addListener(myMarker, 'dragend', function (evt) {
-                    document.getElementById('current').innerHTML;
-                    //var place = evt.latLng.getPlace();
-                    //var address = place.formatted_address;
-                    var latitude = evt.latLng.lat();
-                    var longitude = evt.latLng.lng();
-                    $("#hdnLatitude").val(latitude);
-                    $("#hdnLongitude").val(longitude);
-                    $("#hdnAddress").val(address);
-                });
+            var myMarker = new google.maps.Marker({
+                position: new google.maps.LatLng(41.500, -81.694),
+                draggable: true,
+                map: map
+            });
+            google.maps.event.addListener(myMarker, 'dragend', function (evt) {
+                document.getElementById('current').innerHTML;
+                var latitude = evt.latLng.lat();
+                var longitude = evt.latLng.lng();
+                $("#hdnLatitude").val(latitude);
+                $("#hdnLongitude").val(longitude);
+});
 
                 google.maps.event.addListener(myMarker, 'dragstart', function (evt) {
                     document.getElementById('current').innerHTML;
                 });
-            }
-       
-        map.setCenter(myMarker.position);
-        myMarker.setMap(map_canvas);
 
-        
+            
 
+
+
+            map.setCenter(myMarker.position);
+            myMarker.setMap(map_canvas);
+        }
     </script>
-    <script async defer
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc&callback=initMap">
-    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc&callback=initMap"></script>
+    <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+
 
     <div class="form-horizontal">
         <h4>ReportView</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        
+
         <section>
             <div id='map_canvas'></div>
 
             <div id="current"></div>
-
+            <p id="hdnAddress" />
             @Html.HiddenFor(model => model.Longitude, new { id = "hdnLongitude" })
             @Html.HiddenFor(model => model.Latitude, new { id = "hdnLatitude", })
             @Html.HiddenFor(model => model.AddressString, new { id = "hdnAddress", })
@@ -78,7 +76,7 @@
             </div>
         </div>  @*Submit Button*@
     </div>
-   }
+}
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
