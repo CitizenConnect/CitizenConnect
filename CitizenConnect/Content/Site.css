@@ -22,6 +22,28 @@ select,
 textarea {
     max-width: 280px;
 }
+.col-md-3 headshot {
+    max-height: 150px;
+}
+.panel {
+    margin-bottom: 20px;
+}
+.panel-title {
+    font-weight: bold;
+}
+.social-links a {
+	width: 42px;
+	height: 42px;
+	display: block;
+	/*line-height: 41px;*/
+	/*text-align: center;
+	border: 1px solid rgba(255, 255, 255, .1);
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+			border-radius: 3px;*/
+	font-size: 14px;
+	color: rgba(0, 0, 0,);
+}
 h2 {
     text-align: center;
     font-size:22px;
@@ -65,4 +87,3 @@ h1#appName {
     background-position:center;
     margin:50px
     }*/
-

@@ -41,10 +41,12 @@
             @Html.DisplayFor(model => model.ApplicationUser.userFirstName)
             @Html.DisplayFor(model => model.ApplicationUser.userLastName)
         </dd>
-
     </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+    
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+<p><a href="/InterestedVolunteers/Create">Are you interested in volunteering?</a></p>

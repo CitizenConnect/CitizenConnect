@@ -16,7 +16,7 @@ namespace CitizenConnect.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Meet the Developers of Citizen Connect";
 
             return View();
         }
