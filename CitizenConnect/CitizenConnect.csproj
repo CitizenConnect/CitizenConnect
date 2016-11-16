@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterestedVolunteersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectViewsController.cs" />
     <Compile Include="Controllers\ReportTypesController.cs" />
@@ -221,10 +222,28 @@
     <Compile Include="Migrations\201611151648475_timestampForReports.Designer.cs">
       <DependentUpon>201611151648475_timestampForReports.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611161528216_InterestedVolunteer.cs" />
+    <Compile Include="Migrations\201611161528216_InterestedVolunteer.Designer.cs">
+      <DependentUpon>201611161528216_InterestedVolunteer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611161530451_AddedBoolOption.cs" />
+    <Compile Include="Migrations\201611161530451_AddedBoolOption.Designer.cs">
+      <DependentUpon>201611161530451_AddedBoolOption.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611161552442_AddedPrimaryKey.cs" />
+    <Compile Include="Migrations\201611161552442_AddedPrimaryKey.Designer.cs">
+      <DependentUpon>201611161552442_AddedPrimaryKey.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611161614298_debugging.cs" />
+    <Compile Include="Migrations\201611161614298_debugging.Designer.cs">
+      <DependentUpon>201611161614298_debugging.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InterestedVolunteers.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProjectID.cs" />
     <Compile Include="Models\ProjectView.cs" />
     <Compile Include="Models\ReportType.cs" />
     <Compile Include="Models\ReportView.cs" />
@@ -342,6 +361,11 @@
     <Content Include="Views\ProjectViews\Details.cshtml" />
     <Content Include="Views\ProjectViews\Edit.cshtml" />
     <Content Include="Views\ProjectViews\Index.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Create.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Delete.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Details.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Edit.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -364,6 +388,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611151648475_timestampForReports.resx">
       <DependentUpon>201611151648475_timestampForReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161528216_InterestedVolunteer.resx">
+      <DependentUpon>201611161528216_InterestedVolunteer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161530451_AddedBoolOption.resx">
+      <DependentUpon>201611161530451_AddedBoolOption.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161552442_AddedPrimaryKey.resx">
+      <DependentUpon>201611161552442_AddedPrimaryKey.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611161614298_debugging.resx">
+      <DependentUpon>201611161614298_debugging.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
