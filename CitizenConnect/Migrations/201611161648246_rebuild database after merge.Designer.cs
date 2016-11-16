@@ -7,13 +7,13 @@ namespace CitizenConnect.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class AddedBoolOption : IMigrationMetadata
+    public sealed partial class rebuilddatabaseaftermerge : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedBoolOption));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(rebuilddatabaseaftermerge));
         
         string IMigrationMetadata.Id
         {
-            get { return "201611161530451_AddedBoolOption"; }
+            get { return "201611161648246_rebuild database after merge"; }
         }
         
         string IMigrationMetadata.Source

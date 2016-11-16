@@ -3,33 +3,23 @@ namespace CitizenConnect.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class merging : DbMigration
+    public partial class rebuilddatabaseaftermerge : DbMigration
     {
         public override void Up()
         {
             CreateTable(
-                "dbo.ReportTypes",
+                "dbo.InterestedVolunteers",
                 c => new
                     {
-                        ReportTypeID = c.Int(nullable: false, identity: true),
-                        ReportTypeName = c.String(),
-                    })
-                .PrimaryKey(t => t.ReportTypeID);
-            
-            CreateTable(
-                "dbo.ReportViews",
-                c => new
-                    {
-                        ReportID = c.Int(nullable: false, identity: true),
-                        Longitude = c.String(),
-                        Latitude = c.String(),
-                        PlaceID = c.String(),
-                        AddressString = c.String(),
-                        ReportTypeID = c.Int(nullable: false),
+                        InterestedUserID = c.Int(nullable: false, identity: true),
+                        IfInterested = c.Boolean(nullable: false),
+                        ProjectID = c.Int(nullable: false),
                         ApplicationUser_Id = c.String(maxLength: 128),
                     })
-                .PrimaryKey(t => t.ReportID)
+                .PrimaryKey(t => t.InterestedUserID)
                 .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
+                .ForeignKey("dbo.ProjectViews", t => t.ProjectID, cascadeDelete: true)
+                .Index(t => t.ProjectID)
                 .Index(t => t.ApplicationUser_Id);
             
             CreateTable(
@@ -93,6 +83,48 @@ namespace CitizenConnect.Migrations
                 .Index(t => t.RoleId);
             
             CreateTable(
+                "dbo.ProjectViews",
+                c => new
+                    {
+                        ProjectID = c.Int(nullable: false, identity: true),
+                        ProjectName = c.String(),
+                        ProjectDescription = c.String(),
+                        CreationDate = c.DateTime(nullable: false),
+                        ApplicationUser_Id = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.ProjectID)
+                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
+                .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
+                "dbo.ReportTypes",
+                c => new
+                    {
+                        ReportTypeID = c.Int(nullable: false, identity: true),
+                        ReportTypeName = c.String(),
+                    })
+                .PrimaryKey(t => t.ReportTypeID);
+            
+            CreateTable(
+                "dbo.ReportViews",
+                c => new
+                    {
+                        ReportID = c.Int(nullable: false, identity: true),
+                        Longitude = c.String(),
+                        Latitude = c.String(),
+                        PlaceID = c.String(),
+                        AddressString = c.String(),
+                        TimeStamp = c.DateTime(nullable: false),
+                        ReportTypeID = c.Int(nullable: false),
+                        ApplicationUser_Id = c.String(maxLength: 128),
+                    })
+                .PrimaryKey(t => t.ReportID)
+                .ForeignKey("dbo.AspNetUsers", t => t.ApplicationUser_Id)
+                .ForeignKey("dbo.ReportTypes", t => t.ReportTypeID, cascadeDelete: true)
+                .Index(t => t.ReportTypeID)
+                .Index(t => t.ApplicationUser_Id);
+            
+            CreateTable(
                 "dbo.AspNetRoles",
                 c => new
                     {
@@ -107,24 +139,34 @@ namespace CitizenConnect.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.AspNetUserRoles", "RoleId", "dbo.AspNetRoles");
+            DropForeignKey("dbo.ReportViews", "ReportTypeID", "dbo.ReportTypes");
             DropForeignKey("dbo.ReportViews", "ApplicationUser_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.InterestedVolunteers", "ProjectID", "dbo.ProjectViews");
+            DropForeignKey("dbo.ProjectViews", "ApplicationUser_Id", "dbo.AspNetUsers");
+            DropForeignKey("dbo.InterestedVolunteers", "ApplicationUser_Id", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserRoles", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserLogins", "UserId", "dbo.AspNetUsers");
             DropForeignKey("dbo.AspNetUserClaims", "UserId", "dbo.AspNetUsers");
             DropIndex("dbo.AspNetRoles", "RoleNameIndex");
+            DropIndex("dbo.ReportViews", new[] { "ApplicationUser_Id" });
+            DropIndex("dbo.ReportViews", new[] { "ReportTypeID" });
+            DropIndex("dbo.ProjectViews", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.AspNetUserRoles", new[] { "RoleId" });
             DropIndex("dbo.AspNetUserRoles", new[] { "UserId" });
             DropIndex("dbo.AspNetUserLogins", new[] { "UserId" });
             DropIndex("dbo.AspNetUserClaims", new[] { "UserId" });
             DropIndex("dbo.AspNetUsers", "UserNameIndex");
-            DropIndex("dbo.ReportViews", new[] { "ApplicationUser_Id" });
+            DropIndex("dbo.InterestedVolunteers", new[] { "ApplicationUser_Id" });
+            DropIndex("dbo.InterestedVolunteers", new[] { "ProjectID" });
             DropTable("dbo.AspNetRoles");
+            DropTable("dbo.ReportViews");
+            DropTable("dbo.ReportTypes");
+            DropTable("dbo.ProjectViews");
             DropTable("dbo.AspNetUserRoles");
             DropTable("dbo.AspNetUserLogins");
             DropTable("dbo.AspNetUserClaims");
             DropTable("dbo.AspNetUsers");
-            DropTable("dbo.ReportViews");
-            DropTable("dbo.ReportTypes");
+            DropTable("dbo.InterestedVolunteers");
         }
     }
 }
