@@ -1,0 +1,50 @@
+﻿@model CitizenConnect.Models.ProjectView
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProjectView</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ProjectDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ProjectDescription)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CreationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CreationDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ApplicationUser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ApplicationUser.userFirstName)
+            @Html.DisplayFor(model => model.ApplicationUser.userLastName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

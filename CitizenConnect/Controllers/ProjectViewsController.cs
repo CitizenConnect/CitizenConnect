@@ -12,7 +12,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CitizenConnect.Controllers
 {
-    public class ReportViewsController : Controller
+    public class ProjectViewsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
@@ -26,14 +26,14 @@ namespace CitizenConnect.Controllers
             }
         }
 
-        // GET: ReportViews
+        // GET: ProjectViews
         [Authorize]
         public ActionResult Index()
         {
-            return View(db.ReportViews.ToList());
+            return View(db.ProjectViews.ToList());
         }
 
-        // GET: ReportViews/Details/5
+        // GET: ProjectViews/Details/5
         [Authorize]
         public ActionResult Details(int? id)
         {
@@ -41,45 +41,42 @@ namespace CitizenConnect.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ReportView reportView = db.ReportViews.Find(id);
-            if (reportView == null)
+            ProjectView projectView = db.ProjectViews.Find(id);
+            if (projectView == null)
             {
                 return HttpNotFound();
             }
-            return View(reportView);
+            return View(projectView);
         }
 
-        // GET: ReportViews/Create
+        // GET: ProjectViews/Create
         [Authorize]
         public ActionResult Create()
         {
-            ViewBag.ReportTypeID = new SelectList(db.ReportTypes, "ReportTypeID", "ReportTypeName");
             return View();
         }
 
-        // POST: ReportViews/Create
+        // POST: ProjectViews/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ReportID,Longitude,AddressString,PlaceID,Latitude,ReportTypeID,TimeStamp")] ReportView reportView)
+        public ActionResult Create([Bind(Include = "ProjectID,ProjectName,ProjectDescription,CreationDate")] ProjectView projectView)
         {
-            reportView.TimeStamp = DateTime.Now;
-            reportView.ApplicationUser = CurrentUser;
+            projectView.ApplicationUser = CurrentUser;
+            projectView.CreationDate = DateTime.Now;
             if (ModelState.IsValid)
             {
-                
-                db.ReportViews.Add(reportView);
+                db.ProjectViews.Add(projectView);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.ReportTypeID = new SelectList(db.ReportTypes, "ReportTypeID", "ReportTypeName", reportView.ReportTypeID);
-            return View(reportView);
+            return View(projectView);
         }
 
-        // GET: ReportViews/Edit/5
+        // GET: ProjectViews/Edit/5
         [Authorize]
         public ActionResult Edit(int? id)
         {
@@ -87,32 +84,32 @@ namespace CitizenConnect.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ReportView reportView = db.ReportViews.Find(id);
-            if (reportView == null)
+            ProjectView projectView = db.ProjectViews.Find(id);
+            if (projectView == null)
             {
                 return HttpNotFound();
             }
-            return View(reportView);
+            return View(projectView);
         }
 
-        // POST: ReportViews/Edit/5
+        // POST: ProjectViews/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ReportID,Longitude,Latitude,ReportTypeID")] ReportView reportView)
+        public ActionResult Edit([Bind(Include = "ProjectID,ProjectName,ProjectDescription,CreationDate")] ProjectView projectView)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(reportView).State = EntityState.Modified;
+                db.Entry(projectView).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(reportView);
+            return View(projectView);
         }
 
-        // GET: ReportViews/Delete/5
+        // GET: ProjectViews/Delete/5
         [Authorize]
         public ActionResult Delete(int? id)
         {
@@ -120,22 +117,22 @@ namespace CitizenConnect.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ReportView reportView = db.ReportViews.Find(id);
-            if (reportView == null)
+            ProjectView projectView = db.ProjectViews.Find(id);
+            if (projectView == null)
             {
                 return HttpNotFound();
             }
-            return View(reportView);
+            return View(projectView);
         }
 
-        // POST: ReportViews/Delete/5
+        // POST: ProjectViews/Delete/5
         [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ReportView reportView = db.ReportViews.Find(id);
-            db.ReportViews.Remove(reportView);
+            ProjectView projectView = db.ProjectViews.Find(id);
+            db.ProjectViews.Remove(projectView);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -18,7 +18,7 @@
             @Html.DisplayNameFor(model => model.Latitude)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ReportTypeID)
+            @Html.DisplayNameFor(model => model.ReportType.ReportTypeName)
         </th>
         <th></th>
     </tr>
@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.Latitude)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.ReportTypeID)
+            @Html.DisplayFor(modelItem => item.ReportType.ReportTypeName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ReportID }) |
