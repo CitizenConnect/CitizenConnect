@@ -1,12 +1,13 @@
 ﻿html, body{
-    overflow:hidden;
+    overflow-y:hidden;
     padding:0;
     margin:0;
 }
-body {
-   
+html{
+    display:flex;
 }
-div.container.body-content{
+
+div.container-fluid{
     margin-top:0;
     padding-top:0;
     padding-bottom:0;
@@ -15,11 +16,7 @@ div.container.body-content{
     width:1139px;
     height:792px;
     background-position:center;
-
-}
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    
+    margin-left:0;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -51,32 +48,41 @@ button {
     border-radius:6px;
     padding:10px;
 }
-/*#landingPage{
-    position:sticky;
-}*/
+
 h1#appName {
     text-align:center;
-    font-size:60px;
+    font-size:70px;
     color:black;
     /*margin-left: 150px;
     margin-right: 150px;*/
-    margin-top: 150px;
- 
+    margin-top: 100px;
+    font-family: 'Lalezar', cursive;
+    /*opacity:1.7;*/
     }
-
-div#landingPageText {
-    background-image: url('Image/smartphone.jpg');
+div#landingPage{
     background-size:cover;
     background-repeat:no-repeat;
-    /*border-radius:5px;*/
-    width:1140px;
+    width:1366px;
     height:721px;
     background-position:center;
     position:fixed;
     margin-top:0;
     margin-bottom:0;
-    margin-right:35px;
-    opacity:.75;
+}
+
+/*div#landingPage*/.background-image {
+    background-image: url('Image/smartphone.jpg');
+    background-size:cover;
+    background-repeat:no-repeat;
+    /*border-radius:5px;*/
+    width:1366px;
+    height:721px;
+    background-position:center;
+    position:fixed;
+    margin-top:0;
+    margin-bottom:0;
+    /*margin-right:35px;*/
+    opacity:.70;
     }
 #copyRight{
     position:fixed;
