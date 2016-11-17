@@ -1,12 +1,25 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿html, body{
+    overflow:hidden;
+    padding:0;
+    margin:0;
 }
+body {
+   
+}
+div.container.body-content{
+    margin-top:0;
+    padding-top:0;
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:0;
+    width:1139px;
+    height:792px;
+    background-position:center;
 
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -38,24 +51,36 @@ button {
     border-radius:6px;
     padding:10px;
 }
-
+/*#landingPage{
+    position:sticky;
+}*/
 h1#appName {
     text-align:center;
     font-size:60px;
     color:black;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 0px;
+    /*margin-left: 150px;
+    margin-right: 150px;*/
+    margin-top: 150px;
+ 
     }
 
-/*div#landingPage {
+div#landingPageText {
     background-image: url('Image/smartphone.jpg');
     background-size:cover;
     background-repeat:no-repeat;
-    border-radius:5px;
-    width:900px;
-    height:550px;
+    /*border-radius:5px;*/
+    width:1140px;
+    height:721px;
     background-position:center;
-    margin:50px
-    }*/
-
+    position:fixed;
+    margin-top:0;
+    margin-bottom:0;
+    margin-right:35px;
+    opacity:.75;
+    }
+#copyRight{
+    position:fixed;
+    margin-top:560px;
+    color:white;
+    margin-left:10px;
+}
