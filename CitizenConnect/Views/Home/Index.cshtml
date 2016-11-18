@@ -2,14 +2,27 @@
     ViewBag.Title = "Home Page";
 }
 
- <body>
-  <div id="landingPage">
-     <h1 id="appName">Citizen Connect</h1>
-        <h2>Find your Ward</h2>
-            <h6 id="submitButton"><button>@Html.ActionLink("Click Here", "Ward", "Home")</button></h6>
-        <h2>Report a problem</h2>
-    <h6 id="submitButton"><button>@Html.ActionLink("Click Here", "Create", "ReportViews")</button></h6>
-      <h2>Suggest a Community Project</h2>
-      <h6 id="submitButton"><button>@Html.ActionLink("Click Here", "Create", "ProjectViews")</button></h6>
+
+<body>
+    <div class="container-fluid">
+        <div class="row img-responsive" id="landingPage">
+            <div class="background-image" id="image">
+            </div>
+            <div class="col-sm-12">
+                <h1 id="appName">citizen connect</h1>
+            </div>
+            <div class="col-sm-12">
+                <h2>Find your Ward</h2>
+                <h6 id="submitButton"><button>@Html.ActionLink("Click Here", "Ward", "Home")</button></h6>
+            </div>
+            <div class="col-sm-12">
+                <h2>Report a problem</h2>
+                <h6 id="submitButton"><button>@Html.ActionLink("Click Here", "Create", "ReportViews")</button></h6>
+            </div>
+            <div class="col-sm-12">
+                <h2>Suggest a Community Project</h2>
+                <h6 id="submitButton"><button>@Html.ActionLink("Click Here", "Create", "ProjectViews")</button></h6>
+            </div>
+        </div>
     </div>
- </body>
+</body>
