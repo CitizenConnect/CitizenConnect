@@ -198,6 +198,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterestedVolunteersController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ProjectViewsController.cs" />
     <Compile Include="Controllers\ReportTypesController.cs" />
@@ -205,26 +206,16 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201611141948064_merging.cs" />
-    <Compile Include="Migrations\201611141948064_merging.Designer.cs">
-      <DependentUpon>201611141948064_merging.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611150006404_ReportTypes.cs" />
-    <Compile Include="Migrations\201611150006404_ReportTypes.Designer.cs">
-      <DependentUpon>201611150006404_ReportTypes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611151537475_ProjectViewTable.cs" />
-    <Compile Include="Migrations\201611151537475_ProjectViewTable.Designer.cs">
-      <DependentUpon>201611151537475_ProjectViewTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201611151648475_timestampForReports.cs" />
-    <Compile Include="Migrations\201611151648475_timestampForReports.Designer.cs">
-      <DependentUpon>201611151648475_timestampForReports.cs</DependentUpon>
+    <Compile Include="Migrations\201611161648246_rebuild database after merge.cs" />
+    <Compile Include="Migrations\201611161648246_rebuild database after merge.Designer.cs">
+      <DependentUpon>201611161648246_rebuild database after merge.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\InterestedVolunteers.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\ProjectID.cs" />
     <Compile Include="Models\ProjectView.cs" />
     <Compile Include="Models\ReportType.cs" />
     <Compile Include="Models\ReportView.cs" />
@@ -239,12 +230,18 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Image\smartphone.jpg" />
     <Content Include="favicon.ico" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\darin-meraz.jpg" />
+    <Content Include="Images\sarah-kaminski.jpg" />
+    <Content Include="Images\stephen-page.jpg" />
     <Content Include="Scripts\dataTables.bootstrap.js" />
     <Content Include="Scripts\ejs_production.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -255,6 +252,11 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -331,6 +333,11 @@
     <Content Include="Views\ProjectViews\Details.cshtml" />
     <Content Include="Views\ProjectViews\Edit.cshtml" />
     <Content Include="Views\ProjectViews\Index.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Create.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Delete.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Details.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Edit.cshtml" />
+    <Content Include="Views\InterestedVolunteers\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -342,17 +349,8 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201611141948064_merging.resx">
-      <DependentUpon>201611141948064_merging.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611150006404_ReportTypes.resx">
-      <DependentUpon>201611150006404_ReportTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611151537475_ProjectViewTable.resx">
-      <DependentUpon>201611151537475_ProjectViewTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201611151648475_timestampForReports.resx">
-      <DependentUpon>201611151648475_timestampForReports.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611161648246_rebuild database after merge.resx">
+      <DependentUpon>201611161648246_rebuild database after merge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

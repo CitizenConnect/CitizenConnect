@@ -7,133 +7,115 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CitizenConnect.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
-using CitizenConnect.Migrations;
 
 namespace CitizenConnect.Controllers
 {
-    public class ProjectViewsController : Controller
+    public class InterestedVolunteersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        private ApplicationUser CurrentUser
-        {
-            get
-            {
-                UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
-                ApplicationUser currentUser = UserManager.FindById(User.Identity.GetUserId());
-                return currentUser;
-            }
-        }
-
-        // GET: ProjectViews
-        [Authorize]
+        // GET: InterestedVolunteers
         public ActionResult Index()
         {
-            return View(db.ProjectViews.ToList());
+            var interestedVolunteers = db.InterestedVolunteers.Include(i => i.ProjectView);
+            return View(interestedVolunteers.ToList());
         }
 
-        // GET: ProjectViews/Details/5
-        [Authorize]
+        // GET: InterestedVolunteers/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProjectView projectView = db.ProjectViews.Find(id);
-            if (projectView == null)
+            InterestedVolunteers interestedVolunteers = db.InterestedVolunteers.Find(id);
+            if (interestedVolunteers == null)
             {
                 return HttpNotFound();
             }
-            return View(projectView);
+            return View(interestedVolunteers);
         }
 
-        // GET: ProjectViews/Create
-        [Authorize]
+        // GET: InterestedVolunteers/Create
         public ActionResult Create()
         {
+            ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName");
             return View();
         }
 
-        // POST: ProjectViews/Create
+        // POST: InterestedVolunteers/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProjectID,ProjectName,ProjectDescription,CreationDate")] ProjectView projectView)
+        public ActionResult Create([Bind(Include = "InterestedUserID,IfInterested,ProjectID")] InterestedVolunteers interestedVolunteers)
         {
-            projectView.ApplicationUser = CurrentUser;
-            projectView.CreationDate = DateTime.Now;
             if (ModelState.IsValid)
             {
-                db.ProjectViews.Add(projectView);
+                db.InterestedVolunteers.Add(interestedVolunteers);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(projectView);
+            ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName", interestedVolunteers.ProjectID);
+            return View(interestedVolunteers);
         }
 
-        // GET: ProjectViews/Edit/5
-        [Authorize]
+        // GET: InterestedVolunteers/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProjectView projectView = db.ProjectViews.Find(id);
-            if (projectView == null)
+            InterestedVolunteers interestedVolunteers = db.InterestedVolunteers.Find(id);
+            if (interestedVolunteers == null)
             {
                 return HttpNotFound();
             }
-            return View(projectView);
+            ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName", interestedVolunteers.ProjectID);
+            return View(interestedVolunteers);
         }
 
-        // POST: ProjectViews/Edit/5
+        // POST: InterestedVolunteers/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProjectID,ProjectName,ProjectDescription,CreationDate")] ProjectView projectView)
+        public ActionResult Edit([Bind(Include = "InterestedUserID,IfInterested,ProjectID")] InterestedVolunteers interestedVolunteers)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(projectView).State = EntityState.Modified;
+                db.Entry(interestedVolunteers).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(projectView);
+            ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName", interestedVolunteers.ProjectID);
+            return View(interestedVolunteers);
         }
 
-        // GET: ProjectViews/Delete/5
-        [Authorize]
+        // GET: InterestedVolunteers/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            ProjectView projectView = db.ProjectViews.Find(id);
-            if (projectView == null)
+            InterestedVolunteers interestedVolunteers = db.InterestedVolunteers.Find(id);
+            if (interestedVolunteers == null)
             {
                 return HttpNotFound();
             }
-            return View(projectView);
+            return View(interestedVolunteers);
         }
 
-        // POST: ProjectViews/Delete/5
-        [Authorize]
+        // POST: InterestedVolunteers/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            ProjectView projectView = db.ProjectViews.Find(id);
-            db.ProjectViews.Remove(projectView);
+            InterestedVolunteers interestedVolunteers = db.InterestedVolunteers.Find(id);
+            db.InterestedVolunteers.Remove(interestedVolunteers);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
