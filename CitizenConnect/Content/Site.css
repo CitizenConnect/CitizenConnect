@@ -1,4 +1,4 @@
-﻿html, body{
+﻿#homePage{
     overflow-y:hidden;
     padding:0;
     margin:0;
@@ -89,4 +89,16 @@ div#landingPage{
     margin-top:560px;
     color:white;
     margin-left:10px;
+}
+#titleResource{
+    font-family: 'Lalezar', cursive;
+    text-align:center;
+    font-size:60px;
+    color:black;
+}
+#resourcePage{
+    margin-top:50px;
+    margin-left:7%;
+    overflow-x:hidden;
+    overflow-y:visible;
 }
