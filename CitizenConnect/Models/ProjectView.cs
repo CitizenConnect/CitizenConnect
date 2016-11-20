@@ -15,8 +15,9 @@ namespace CitizenConnect.Models
         public string ProjectName { get; set; }
         public string ProjectDescription { get; set; }
         public DateTime CreationDate { get; set; }
-        
+
         //member suggesting project
+        [Display(Name = "Organizer")]
         public virtual ApplicationUser ApplicationUser { get; set; }
 
        

@@ -7,12 +7,24 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using CitizenConnect.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CitizenConnect.Controllers
 {
     public class InterestedVolunteersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+
+        private ApplicationUser CurrentUser
+        {
+            get
+            {
+                UserManager<ApplicationUser> UserManager = new UserManager<ApplicationUser>(new UserStore<ApplicationUser>(db));
+                ApplicationUser currentUser = UserManager.FindById(User.Identity.GetUserId());
+                return currentUser;
+            }
+        }
 
         // GET: InterestedVolunteers
         public ActionResult Index()
@@ -50,6 +62,7 @@ namespace CitizenConnect.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "InterestedUserID,IfInterested,ProjectID")] InterestedVolunteers interestedVolunteers)
         {
+            interestedVolunteers.ApplicationUser = CurrentUser;
             if (ModelState.IsValid)
             {
                 db.InterestedVolunteers.Add(interestedVolunteers);
