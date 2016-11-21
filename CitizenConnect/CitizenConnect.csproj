@@ -213,6 +213,7 @@
     <Compile Include="Migrations\201611200214528_ListVolunteers.cs" />
     <Compile Include="Migrations\201611200214528_ListVolunteers.Designer.cs">
       <DependentUpon>201611200214528_ListVolunteers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201611182011440_EmailForm.cs" />
     <Compile Include="Migrations\201611182011440_EmailForm.Designer.cs">
       <DependentUpon>201611182011440_EmailForm.cs</DependentUpon>
@@ -366,6 +367,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611200214528_ListVolunteers.resx">
       <DependentUpon>201611200214528_ListVolunteers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611182011440_EmailForm.resx">
       <DependentUpon>201611182011440_EmailForm.cs</DependentUpon>
     </EmbeddedResource>
