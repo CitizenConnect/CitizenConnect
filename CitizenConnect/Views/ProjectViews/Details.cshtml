@@ -1,52 +1,52 @@
-﻿@model CitizenConnect.Models.ProjectView
+﻿@model  CitizenConnect.Models.ProjectView
+
 
 @{
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Project Details</h2>
+<hr />
+<dl class="dl-horizontal">
+    <dt>
+        @Html.DisplayNameFor(model => model.ProjectName)
+    </dt>
 
-<div>
-    <h4>ProjectView</h4>
+    <dd>
+        @Html.DisplayFor(model => model.ProjectName)
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.ProjectDescription)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ProjectDescription)
+    </dd>
+
+    @*<dt>
+        @Html.DisplayNameFor(model => model.CreationDate)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.CreationDate)
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.ApplicationUser)
+    </dt>
+
+    <dd>
+        @Html.DisplayFor(model => model.ApplicationUser.userFirstName)
+        @Html.DisplayFor(model => model.ApplicationUser.userLastName)
+    </dd>*@
+</dl>
+
+<p>
+    @*@Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |*@
+    @Html.ActionLink("Join a Project", "Create", "InterestedVolunteers")
     <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectName)
-        </dt>
+    @Html.ActionLink("Currrent Projects", "Index")
+</p>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProjectName)
-        </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectDescription)
-        </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProjectDescription)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.CreationDate)
-        </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ApplicationUser)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ApplicationUser.userFirstName)
-            @Html.DisplayFor(model => model.ApplicationUser.userLastName)
-        </dd>
-    </dl>
-
-    
-    </div>
-    <p>
-        @*@Html.ActionLink("Edit", "Edit", new { id = Model.ProjectID }) |*@
-        @Html.ActionLink("Currrent Projects", "Index")
-    </p>
-<p><a href="/InterestedVolunteers/Create">Are you interested in volunteering?</a></p>

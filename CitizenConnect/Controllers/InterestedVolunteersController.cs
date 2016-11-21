@@ -67,10 +67,10 @@ namespace CitizenConnect.Controllers
             {
                 db.InterestedVolunteers.Add(interestedVolunteers);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Create");
             }
-
-            ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName", interestedVolunteers.ProjectID);
+            
+            //ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName", interestedVolunteers.ProjectID);
             return View(interestedVolunteers);
         }
 

@@ -20,6 +20,10 @@ namespace CitizenConnect.Models
         [Display(Name = "Organizer")]
         public virtual ApplicationUser ApplicationUser { get; set; }
 
+        //Volunteers
+        [Display(Name = "Volunteer")]
+        public virtual ICollection<InterestedVolunteers>InterestedVolunteers { get; set; }
+
        
 
     }

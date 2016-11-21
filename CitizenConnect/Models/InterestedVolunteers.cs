@@ -18,6 +18,7 @@ namespace CitizenConnect.Models
         public virtual ApplicationUser ApplicationUser { get; set; }
         
         [ForeignKey("ProjectView")]
+        [Display(Name = "Community Projects")]
         public int ProjectID { get; set; }
         public virtual ProjectView ProjectView  { get; set; }
         

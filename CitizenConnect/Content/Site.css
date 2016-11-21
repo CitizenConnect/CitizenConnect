@@ -92,4 +92,12 @@ div#landingPage{
     margin-left:10px;
 }
 
+body#WardLookup {
+    margin-top: 50px;
+    padding-top:50px;
+
+}
+div#wardInput {
+    text-align:center;
+}
 
