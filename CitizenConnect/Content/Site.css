@@ -1,12 +1,23 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿
+html, body{
+    overflow-y:hidden;
+    padding:0;
+    margin:0;
+}
+html{
+    display:flex;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+div.container-fluid{
+    margin-top:0;
+    padding-top:0;
+    padding-bottom:0;
+    padding-left:0;
+    padding-right:0;
+    width:1139px;
+    height:792px;
+    background-position:center;
+    margin-left:0;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,28 +32,6 @@ input,
 select,
 textarea {
     max-width: 280px;
-}
-.col-md-3 headshot {
-    max-height: 150px;
-}
-.panel {
-    margin-bottom: 20px;
-}
-.panel-title {
-    font-weight: bold;
-}
-.social-links a {
-	width: 42px;
-	height: 42px;
-	display: block;
-	/*line-height: 41px;*/
-	/*text-align: center;
-	border: 1px solid rgba(255, 255, 255, .1);
-	-webkit-border-radius: 3px;
-	   -moz-border-radius: 3px;
-			border-radius: 3px;*/
-	font-size: 14px;
-	color: rgba(0, 0, 0,);
 }
 h2 {
     text-align: center;
@@ -63,20 +52,44 @@ button {
 
 h1#appName {
     text-align:center;
-    font-size:60px;
+    font-size:70px;
     color:black;
-    margin-left: 150px;
-    margin-right: 150px;
-    margin-top: 0px;
+    /*margin-left: 150px;
+    margin-right: 150px;*/
+    margin-top: 100px;
+    font-family: 'Lalezar', cursive;
+    /*opacity:1.7;*/
     }
+div#landingPage{
+    background-size:cover;
+    background-repeat:no-repeat;
+    width:1366px;
+    height:721px;
+    background-position:center;
+    position:fixed;
+    margin-top:0;
+    margin-bottom:0;
+}
 
-/*div#landingPage {
+/*div#landingPage*/.background-image {
     background-image: url('Image/smartphone.jpg');
     background-size:cover;
     background-repeat:no-repeat;
-    border-radius:5px;
-    width:900px;
-    height:550px;
+    /*border-radius:5px;*/
+    width:1366px;
+    height:721px;
     background-position:center;
-    margin:50px
-    }*/
+    position:fixed;
+    margin-top:0;
+    margin-bottom:0;
+    /*margin-right:35px;*/
+    opacity:.70;
+    }
+#copyRight{
+    position:fixed;
+    margin-top:560px;
+    color:white;
+    margin-left:10px;
+}
+
+
