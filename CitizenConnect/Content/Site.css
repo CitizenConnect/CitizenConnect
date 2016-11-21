@@ -1,5 +1,6 @@
-﻿
-html, body{
+html, body {
+}
+﻿#homePage{
     overflow-y:hidden;
     padding:0;
     margin:0;
@@ -14,8 +15,8 @@ div.container-fluid{
     padding-bottom:0;
     padding-left:0;
     padding-right:0;
-    width:1139px;
-    height:792px;
+    width:100%;
+    height:100%;
     background-position:center;
     margin-left:0;
 }
@@ -53,36 +54,31 @@ button {
 h1#appName {
     text-align:center;
     font-size:70px;
-    color:black;
-    /*margin-left: 150px;
-    margin-right: 150px;*/
+    color:#35324c;
     margin-top: 100px;
     font-family: 'Lalezar', cursive;
-    /*opacity:1.7;*/
     }
 div#landingPage{
     background-size:cover;
     background-repeat:no-repeat;
-    width:1366px;
-    height:721px;
+    width:100%;
+    height:100%;
     background-position:center;
     position:fixed;
     margin-top:0;
     margin-bottom:0;
 }
 
-/*div#landingPage*/.background-image {
+.background-image {
     background-image: url('Image/smartphone.jpg');
     background-size:cover;
     background-repeat:no-repeat;
-    /*border-radius:5px;*/
-    width:1366px;
-    height:721px;
+    width:100%;
+    height:100%;
     background-position:center;
     position:fixed;
     margin-top:0;
     margin-bottom:0;
-    /*margin-right:35px;*/
     opacity:.70;
     }
 #copyRight{
@@ -92,4 +88,37 @@ div#landingPage{
     margin-left:10px;
 }
 
+#titleResource{
+    font-family: 'Lalezar', cursive;
+    text-align:center;
+    font-size:70px;
+    color:#35324c;
+}
+#resourcePage{
+    margin-top:50px;
+    margin-left:7%;
+    background-color:#7d7875;
+}
+#panelsPanel{
+    background-color:#dfd7c6;
+    border:none;
+}
+#panelHeading{
+    background-color:#c13d50;
+    color:white;
+    font-family: 'Lalezar', cursive;
+}
+.panel-title{
+    font-size:30px;
+}
+#navvyNav{
+    background-color:#35324c;
+    
+}
+#linksColor{
+    color:#35324c;
+}
+#linksColor:hover {
+    color:#dc98a4;
+}
 
