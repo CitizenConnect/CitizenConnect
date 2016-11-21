@@ -3,20 +3,25 @@
     ViewBag.Title = "Ward";
 }
 <script src="~/Scripts/lookup_tool.js"></script>
-<h2>Ward</h2>
-<body>
+
+<body id="WardLookup">
+
+   <h2>Ward</h2>
+    <div id="wardInput">
     @* Generates Input Filed for address *@
     <span>Location:</span>
-    <input type="text" id="address" style="width: 250px" placeholder="Enter a location" />
+   <input type="text" id="address" style="width: 250px" placeholder="Enter a location"/>
    <div id="WardNumber"></div>
     <div id="CouncilPerson"></div>
     <div id="CouncilEmail"></div>
     <div id="CouncilPhone"></div>
     @*<div id="CityHallAddress"></div>*@
+
     <div id="CityCouncilWebsite">
         <a target="_blank" href="http://www.clevelandcitycouncil.org/"></a>
     </div>
     
+
     <div id="CouncilCalendar">
         <a target="_blank" href="http://www.clevelandcitycouncil.org/calendar">Cleveland City Council Calendar</a>
     </div>

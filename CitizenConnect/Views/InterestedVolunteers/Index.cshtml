@@ -17,6 +17,9 @@
         <th>
             @Html.DisplayNameFor(model => model.IfInterested)
         </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ApplicationUser)
+        </th>
         <th></th>
     </tr>
 
@@ -27,6 +30,10 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.IfInterested)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ApplicationUser.userFirstName)
+            @Html.DisplayFor(modelItem => item.ApplicationUser.userLastName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.InterestedUserID }) |

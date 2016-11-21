@@ -210,8 +210,16 @@
     <Compile Include="Migrations\201611161648246_rebuild database after merge.Designer.cs">
       <DependentUpon>201611161648246_rebuild database after merge.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611200214528_ListVolunteers.cs" />
+    <Compile Include="Migrations\201611200214528_ListVolunteers.Designer.cs">
+      <DependentUpon>201611200214528_ListVolunteers.cs</DependentUpon>
+    <Compile Include="Migrations\201611182011440_EmailForm.cs" />
+    <Compile Include="Migrations\201611182011440_EmailForm.Designer.cs">
+      <DependentUpon>201611182011440_EmailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\EmailFormModel.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InterestedVolunteers.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -340,6 +348,8 @@
     <Content Include="Views\InterestedVolunteers\Details.cshtml" />
     <Content Include="Views\InterestedVolunteers\Edit.cshtml" />
     <Content Include="Views\InterestedVolunteers\Index.cshtml" />
+    <Content Include="Views\Home\SendEmail.cshtml" />
+    <Content Include="Views\Home\Sent.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -353,6 +363,11 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201611161648246_rebuild database after merge.resx">
       <DependentUpon>201611161648246_rebuild database after merge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611200214528_ListVolunteers.resx">
+      <DependentUpon>201611200214528_ListVolunteers.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201611182011440_EmailForm.resx">
+      <DependentUpon>201611182011440_EmailForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

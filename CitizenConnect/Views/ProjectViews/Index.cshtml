@@ -1,52 +1,111 @@
 ﻿@model IEnumerable<CitizenConnect.Models.ProjectView>
 
-@{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Community Projects</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectDescription)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.CreationDate)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApplicationUser)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectDescription)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CreationDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApplicationUser.userFirstName)
-            @Html.DisplayFor(modelItem => item.ApplicationUser.userLastName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ProjectID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ProjectID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ProjectID })
-        </td>
-    </tr>
+@foreach (var item in Model)
+{
+    <div class="col-sm-12 col-md-12">
+        <div class="thumbnail">
+            <div class="caption">
+                <h3>@Html.DisplayFor(modelItem => item.ProjectName)</h3>
+                    @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) |
+                
+                <h3>@Html.DisplayNameFor(model => model.ApplicationUser)</h3>
+                <p>
+                   @Html.DisplayFor(modelItem => item.ApplicationUser.userFirstName)
+                   @Html.DisplayFor(modelItem => item.ApplicationUser.userLastName)
+                </p>
+                <h3>@Html.DisplayNameFor(model => model.InterestedVolunteers)</h3>
+                <p>
+                    @Html.DisplayFor(modelItem => item.InterestedVolunteers)
+                </p>
+               </div>
+        </div>
+    </div>
+
 }
+@*<div>
+@foreach (var item in Model)
+{
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">@Html.DisplayFor(modelItem => item.ProjectName)</h3>
+        </div>
+        <div class="panel-body">
+            @Html.DisplayFor(modelItem => item.ProjectDescription) |
+            @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) |
+            @Html.DisplayFor(modelItem => item.InterestedVolunteers)
+          </div>
+      </div>
+}
+</div>*@
 
-</table>
+@*@foreach (var item in Model)  current code not being used.
+{
+<div class="thumbnail">
+    <div class="col-sm-12 col-md-3">
+        <h3>@Html.DisplayFor(modelItem => item.ProjectName)</h3>
+        <p>
+            @Html.DisplayFor(modelItem => item.ProjectDescription) |
+            @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) |
+        </p>
+        <h3>@Html.DisplayNameFor(model => model.ApplicationUser)</h3>
+        <p>
+            @Html.DisplayFor(modelItem => item.InterestedVolunteers)
+        </p>
+    </div>
+
+</div>
+}*@
+@* Code not being used
+    <table class="table">
+
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ProjectDescription)
+                </th>
+                <th>
+                            @Html.DisplayNameFor(model => model.CreationDate)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.ApplicationUser)
+                        </th>
+                        <th></th>
+                    </tr>
+
+        @foreach (var item in Model)
+        {
+
+
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProjectDescription)
+                </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.CreationDate)
+                    </td>
+                <td>
+                        @Html.DisplayFor(modelItem => item.ApplicationUser.userFirstName)
+                        @Html.DisplayFor(modelItem => item.ApplicationUser.userLastName)
+                    </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ProjectID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProjectID })
+                    @Html.ActionLink("Delete", "Delete", new { id=item.ProjectID })*
+                </td>
+            </tr>
+        }
+    </table>*@

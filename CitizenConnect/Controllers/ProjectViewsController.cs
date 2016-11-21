@@ -31,6 +31,7 @@ namespace CitizenConnect.Controllers
         [Authorize]
         public ActionResult Index()
         {
+            var projectviews = db.ProjectViews.Include(i => i.InterestedVolunteers);
             return View(db.ProjectViews.ToList());
         }
 
@@ -43,6 +44,7 @@ namespace CitizenConnect.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             ProjectView projectView = db.ProjectViews.Find(id);
+            
             if (projectView == null)
             {
                 return HttpNotFound();
