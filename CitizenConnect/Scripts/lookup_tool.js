@@ -229,7 +229,7 @@ function addressSearch() {
                 document.getElementById("CouncilEmail").innerHTML = councilEmail;
                 document.getElementById("CouncilPhone").innerHTML = councilPhone;
                 //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-                document.getElementById("CityCouncilWebsite").innerHTML = cityCouncilWebsite;
+                document.getElementById("CityCouncilWebsite").href = cityCouncilWebsite;
             }
             else
             {
