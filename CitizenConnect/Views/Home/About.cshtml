@@ -1,33 +1,42 @@
 ﻿@{
     ViewBag.Title = "About";
 }
-<h2>@ViewBag.Title.</h2>
-<h3>@ViewBag.Message</h3>
+@*<h2>@ViewBag.Title</h2>*@
+</br>
+<div class="panel panel-default" id="panelsPanel">
+    <div class="panel-heading" id="panelHeading">
+        <h3 class="panel-title">@ViewBag.Message</h3>
+    </div>
+    <div class="panel-body">
+        <div class="about">
+            <p>Citizen Connect is a resource for residents of Cleveland to connect with their Cleveland Council Ward representative. It provides a lookup of their ward and council person with contact information.</p>
+            <p>There are also options to suggest or join community projects and report potholes and streetlights that are out to their Councilperson.</p>
 
-<p>Citizen Connect is a resource for residents of Cleveland to connect with their Cleveland Council Ward representative. It provides a lookup of their ward and council person with contact information.</p>
-<p>There are also options to suggest or join community projects and report potholes and streetlights that are out to their Councilperson.</p>
+            <h4>Developed as Final Project for We Can {Code} IT Fall 2016</h4>
+            <ul>
+                <li>Used  ASP.Net MVC with C#, JavaScript, JQuery.</li>
+                <li>Makes Google Maps API, Google Civic Information API</li>
+                <li>Used code from <a target="_blank" href="https://github.com/datamade/my-reps">MyReps</a> to handle Google Civic Information API</li>
+            </ul>
+        </div>
+    </div>
+</div>
 
-<h4>Developed as Final Project for We Can {Code} IT Fall 2016</h4>
-<ul>
-    <li>Used  ASP.Net MVC with C#, JavaScript, JQuery.</li>
-    <li>Makes Google Maps API, Google Civic Information API</li>
-    <li>Used code from <a target="_blank" href="https://github.com/datamade/my-reps">MyReps</a> to handle Google Civic Information API</li>
-</ul>
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="panel panel-default" id="panelsPanel">
+    <div class="panel-heading" id="panelHeading">
         <h3 class="panel-title">Melissa Hughes</h3>
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-3 headshot">
-                <img src="~/Images/melissa-hughes.jpg" class="img-responsive"/>
+            <div class="col-sm-3 headshot">
+                <img src="~/Images/melissa-hughes.jpg" class="img-responsive" />
             </div>
-            <div class="col-md-6 bio">
+            <div class="col-md-6 col-sm-9 bio">
                 <p>As one that constantly looks for ways to reinvent and improve, Melissa made the decision to change careers from non-profit/social service to Information Technology. Initially, learning to code was a way to add skills and remain competitive. However, it quickly turned into her primary interest and she began using online tutorials to learn. Currently she is a Software Engineering Apprentice with We Can Code IT boot camp in Cleveland, Ohio.</p>
                 <p>Born and raised in Cleveland, she has lived in New Orleans, Louisiana, Gettysburg, Pennsylvania and Philadelphia, Pennsylvania. When not creating sites and programs, Melissa is focused on her first love - travel. Her two favorite places are Toronto, Canada and Paris, France and she looks forward to having a vacation home in both locations.</p>
             </div>
 
-            <div class="col-md-3 social-links-col">
+            <div class="col-sm-3 social-links-col">
                 <ul class="social-links fa-ul">
                     <li><a target="_blank" href="https://www.linkedin.com/in/melissahughes216"><i class="fa fa-linkedin fa-li"></i>LinkedIn</a></li>
                     <li><a target="_blank" href="https://github.com/melissahug"><i class="fa fa-github fa-li"></i>GitHub</a></li>
@@ -38,21 +47,21 @@
     </div>
 </div>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="panel panel-default" id="panelsPanel">
+    <div class="panel-heading" id="panelHeading">
         <h3 class="panel-title">Christopher Betteley</h3>
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-3 headshot">
-                <img src="~/Images/christopher-betteley.jpg" class="img-responsive"/>
+            <div class="col-sm-3 headshot">
+                <img src="~/Images/christopher-betteley.jpg" class="img-responsive" />
             </div>
-            <div class="col-md-6 bio">
-                Bio here
+            <div class="col-md-6 col-sm-9 bio">
+                <p>Bio here</p>
                 @*Bio here*@
             </div>
 
-            <div class="col-md-3 social-links-col">
+            <div class="col-sm-3 social-links-col">
                 <ul class="social-links fa-ul">
                     <li><a target="_blank" href="https://www.linkedin.com/in/christopherbetteley"><i class="fa fa-linkedin fa-li"></i>LinkedIn</a></li>
                     <li><a target="_blank" href="https://github.com/ChristopherMBetteley"><i class="fa fa-github fa-li"></i>GitHub</a></li>
@@ -63,46 +72,55 @@
     </div>
 </div>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="panel panel-default" id="panelsPanel">
+    <div class="panel-heading" id="panelHeading">
         <h3 class="panel-title">Sarah Kaminski</h3>
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-3 headshot">
-                <img src="~/Images/sarah-kaminski.jpg" />
+            <div class="col-sm-3 headshot">
+                <img src="~/Images/sarah-kaminski.jpg" class="img-responsive" />
             </div>
-            <div class="col-md-6 bio">
-                Bio here
-                @*Bio here*@
+            <div class="col-md-6 col-sm-9 bio">
+                <p>
+                    Sarah is an Ohio native and has a great passion for learning, knowlegde, and the arts. If she's not reading a new book she is either writing, painting, or dancing to a favorite tune. She is an outgoing individual who chases and embraces change and personal growth in all avenues.
+                    <br />
+                    <br />
+                    She has mastered the art of baking cheesecake and making a flavorful chili both from scratch. Her creativity and passion for the arts transitions well into the world of Computer Programming. Front-end developing comes naturally to her, while the back-end developing provides her the challanges
+                    she is constantly searching for.
+                    <br />
+                    <br />
+                    After nearly 4 years in sales, she has finally taken the leap into Software Engineering and a career path she loves. She is currently an apprentice at We Can Code IT and has been focusing on C#, HTML, CSS,
+                    and JavaScript but looks forward to learning new languages as well.
+                </p>
+
             </div>
 
-            <div class="col-md-3 social-links-col">
+            <div class="col-sm-3 social-links-col">
                 <ul class="social-links fa-ul">
                     <li><a target="_blank" href="https://www.linkedin.com/in/sarah-kaminski"><i class="fa fa-linkedin fa-li"></i>LinkedIn</a></li>
                     <li><a target="_blank" href="https://github.com/sareduhh"><i class="fa fa-github fa-li"></i>GitHub</a></li>
-                    <li><a target="_blank" href="https://YOUR-PORTFOLIO"><i class="fa fa-folder-open fa-li"></i>**Portfolio**</a></li>
+                    <li><a target="_blank" href="http://sarahkaminskiportfolio.apphb.com/"><i class="fa fa-folder-open fa-li"></i>Portfolio</a></li>
                 </ul>
             </div>
         </div>
     </div>
 </div>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="panel panel-default" id="panelsPanel">
+    <div class="panel-heading" id="panelHeading">
         <h3 class="panel-title">Darín Meraz</h3>
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-3 headshot">
-                <img src="~/Images/darin-meraz.jpg" />
+            <div class="col-sm-3 headshot">
+                <img src="~/Images/darin-meraz.jpg" class="img-responsive" />
             </div>
-            <div class="col-md-6 bio">
-                Bio here
-                @*Bio here*@
+            <div class="col-md-6 col-sm-9 bio">
+                <p>Born and raised in Milwaukee, WI, Darín moved to Ohio to attend Oberlin College, where they gained experience working with various nonprofit groups. After college, they served as an AmeriCorps member at Cleveland Housing Network and fulfilled their goal of working with a nonprofit that directly serves the Latino community, Esperanza, Inc. Having been curious about coding for a few years, Darín finally made the jump to enroll with We Can Code IT for Fall 2016.</p>
             </div>
 
-            <div class="col-md-3 social-links-col">
+            <div class="col-sm-3 social-links-col">
                 <ul class="social-links fa-ul">
                     <li><a target="_blank" href="https://www.linkedin.com/in/dmeraz"><i class="fa fa-linkedin fa-li"></i>LinkedIn</a></li>
                     <li><a target="_blank" href="https://github.com/dmeraz"><i class="fa fa-github fa-li"></i>GitHub</a></li>
@@ -113,23 +131,23 @@
     </div>
 </div>
 
-<div class="panel panel-default">
-    <div class="panel-heading">
+<div class="panel panel-default" id="panelsPanel">
+    <div class="panel-heading" id="panelHeading">
         <h3 class="panel-title">Stephen Page</h3>
     </div>
     <div class="panel-body">
         <div class="row">
-            <div class="col-md-3 headshot">
-                <img src="~/Images/stephen-page.jpg" class="img-responsive"/>
+            <div class="col-sm-3 headshot">
+                <img src="~/Images/stephen-page.jpg" class="img-responsive" />
             </div>
-            <div class="col-md-6 bio">
+            <div class="col-md-6 col-sm-9 bio">
                 <p>Stephen has rediscovered his passion for writing software. The creation of programs of instructions for systems and testing and verification match with his drive for detail and clarity.</p>
                 <p>He has over 15 years finding solutions when computers and mobile devices are not working as expected. The process of replication, isolation and resolution benefits from his eye for detail. Working in a team environment required ongoing communication and feedback.</p>
                 <p>Previously he had 10 years in lighting design and theater technology. Producing art by committee requires strong teamwork and communication to meet the immovable deadline of opening night.</p>
                 <p>Stephen spends his spare time with his 12 year old rescued shepherd mix and weaving on one of his several looms. He has been involved with the Medina Spinning & Weaving Guild for eight years and has been producing their newsletter for most of that time and maintaining the website for the last five years.</p>
             </div>
 
-            <div class="col-md-3 social-links-col">
+            <div class="col-sm-3 social-links-col">
                 <ul class="social-links fa-ul">
                     <li><a target="_blank" href="https://www.linkedin.com/in/stephenppage"><i class="fa fa-linkedin fa-li"></i>LinkedIn</a></li>
                     <li><a target="_blank" href="https://github.com/Stephen2Page"><i class="fa fa-github fa-li"></i>GitHub</a></li>

@@ -226,6 +226,10 @@
     <Compile Include="Migrations\201611221632488_UpdateTable.Designer.cs">
       <DependentUpon>201611221632488_UpdateTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611281534339_merge.cs" />
+    <Compile Include="Migrations\201611281534339_merge.Designer.cs">
+      <DependentUpon>201611281534339_merge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\EmailFormModel.cs" />
@@ -384,6 +388,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201611221632488_UpdateTable.resx">
       <DependentUpon>201611221632488_UpdateTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611281534339_merge.resx">
+      <DependentUpon>201611281534339_merge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

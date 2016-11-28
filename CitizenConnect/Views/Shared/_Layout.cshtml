@@ -40,18 +40,21 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("about", "About", "Home")</li>
+                    <li>@Html.ActionLink("find", "Ward", "Home")</li>
+                    <li>@Html.ActionLink("report", "Create", "ReportViews")</li>
+                    <li>@Html.ActionLink("suggest", "Create", "ProjectViews")</li>
                     <li>@Html.ActionLink("resources", "Resources", "Home")</li>
+                    <li>@Html.ActionLink("about", "About", "Home")</li>
                     @*<li>@Html.ActionLink("Lookup", "Lookup", "Home")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-   
+    <div class="body-content">
+        <div class="background-image">
+        </div>
+        <div class="content"> @RenderBody() </div>
         <footer  id="copyRight">
             <p>&copy; @DateTime.Now.Year - citizen connect</p>
         </footer>
