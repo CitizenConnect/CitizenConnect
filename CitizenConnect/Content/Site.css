@@ -1,15 +1,25 @@
+
 ﻿html, body {
 }
-﻿#homePage{
+html{
+  display:flex;
+}
+
+/*.layoutBody {
+height:100%;
+width:100%;
+}*/
+/*﻿div#homePage{
     overflow-y:hidden;
     padding:0;
     margin:0;
-}
-html{
-    display:flex;
+}*/
+.row {
+   margin:0;
 }
 
-div.container-fluid{
+
+.container-fluid{
     margin-top:0;
     padding-top:0;
     padding-bottom:0;
@@ -51,24 +61,24 @@ button {
     padding:10px;
 }
 
-h1#appName {
+#appName {
     text-align:center;
     font-size:70px;
     color:#35324c;
     margin-top: 100px;
     font-family: 'Lalezar', cursive;
     }
-div#landingPage{
+#landingPage{
     background-size:cover;
     background-repeat:no-repeat;
     width:100%;
     height:100%;
     background-position:center;
-    position:fixed;
+    position:relative;
     margin-top:0;
-    margin-bottom:0;
+    margin-bottom:60px;
 }
-
+/*LANDING PAGE IMAGE*/
 .background-image {
     background-image: url('Image/smartphone.jpg');
     background-size:cover;
@@ -79,14 +89,56 @@ div#landingPage{
     position:fixed;
     margin-top:0;
     margin-bottom:0;
-    opacity:.70;
+    } 
+.col-sm-12{
+    position:relative;
+    margin-left:7%;
+    margin-right:7%;
+    margin-bottom:0;
+    margin-top:0;
+    padding:0;
+    height:100%;
+    width:100%;
+   
+}
+#buttonContext{
+ font-family: 'Lalezar', cursive;
+ font-size:30px;
+ color:#35324c;
+}
+.container {
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/*LANDING PAGE IMAGE*/
+#image {
+    opacity:.50;
     }
-#copyRight{
-    position:fixed;
-    margin-top:560px;
+.resourcePage{
+   
+}
+/*RESOURCE PAGE IMAGE*/
+#image1 {
+    opacity:.50;
+    }
+
+/*RESOURCE PAGE PANELS*/
+#resourcePagePanels{
+    margin-top:70px;
+    margin-left:10%;
+    margin-right:10%;
+    width:95%;
+    position:relative;
+    margin-bottom:10%;
+    box-sizing:content-box;
+}
+/*#copyRight{
     color:white;
     margin-left:10px;
-}
+}*/
 
 
 body#WardLookup {
@@ -104,11 +156,7 @@ div#wardInput {
     font-size:70px;
     color:#35324c;
 }
-#resourcePage{
-    margin-top:50px;
-    margin-left:7%;
-    background-color:#7d7875;
-}
+
 #panelsPanel{
     background-color:#dfd7c6;
     border:none;
@@ -123,12 +171,21 @@ div#wardInput {
 }
 #navvyNav{
     background-color:#35324c;
-    
+    font-family: 'Lalezar', cursive;
 }
 #linksColor{
     color:#35324c;
 }
 #linksColor:hover {
     color:#dc98a4;
+}
+
+#map_canvas {
+ width: 500px;
+ height: 500px;
+}
+
+#current {
+ padding-top: 25px;
 }
 
