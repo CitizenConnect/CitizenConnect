@@ -7,9 +7,9 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    <h4>Send your comments.</h4>
+    <h4>Send Report.</h4>
     <hr />
-    <div class="form-group">
+    @*<div class="form-group">
         @Html.LabelFor(m => m.FromName, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.FromName, new { @class = "form-control" })
@@ -29,7 +29,7 @@
             @Html.TextAreaFor(m => m.Message, new { @class = "form-control" })
             @Html.ValidationMessageFor(m => m.Message)
         </div>
-    </div>
+    </div>*@
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" class="btn btn-default" value="Send" />
