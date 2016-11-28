@@ -12,7 +12,9 @@ namespace CitizenConnect.Models
     {
         [Key]
         public int ProjectID { get; set; }
+        [Display(Name = "project name")]
         public string ProjectName { get; set; }
+        [Display(Name ="description")]
         public string ProjectDescription { get; set; }
         public DateTime CreationDate { get; set; }
 

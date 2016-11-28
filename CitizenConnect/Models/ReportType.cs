@@ -10,6 +10,7 @@ namespace CitizenConnect.Models
     {
         [Key]
         public int ReportTypeID { get; set; }
+        [Display(Name ="Type of Report")]
         public string ReportTypeName { get; set; }
     }
 }
