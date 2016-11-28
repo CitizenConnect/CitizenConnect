@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html class="layoutPageHTML">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,7 +23,7 @@
 
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 </head>
-<body>
+<body class="layoutBody">
     <div class="navbar navbar-inverse navbar-fixed-top" id="navvyNav">
         <div class="container">
             <div class="navbar-header">
@@ -32,13 +32,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Citizen Connect", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("citizen connect", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Resources", "Resources", "Home")</li>
+                    <li>@Html.ActionLink("home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("about", "About", "Home")</li>
+                    <li>@Html.ActionLink("resources", "Resources", "Home")</li>
                     @*<li>@Html.ActionLink("Lookup", "Lookup", "Home")</li>*@
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -47,9 +47,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+   
         <footer  id="copyRight">
-            <p>&copy; @DateTime.Now.Year - Citizen Connect</p>
+            <p>&copy; @DateTime.Now.Year - citizen connect</p>
         </footer>
     </div>
 
