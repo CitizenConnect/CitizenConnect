@@ -15,6 +15,7 @@ namespace CitizenConnect.Controllers
     public class InterestedVolunteersController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
+        private object selectedValue;
 
         private ApplicationUser CurrentUser
         {
@@ -51,7 +52,7 @@ namespace CitizenConnect.Controllers
         // GET: InterestedVolunteers/Create
         public ActionResult Create()
         {
-            ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName");
+            ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName", selectedValue);
             return View();
         }
 
@@ -70,7 +71,6 @@ namespace CitizenConnect.Controllers
                 return RedirectToAction("Create");
             }
             
-            //ViewBag.ProjectID = new SelectList(db.ProjectViews, "ProjectID", "ProjectName", interestedVolunteers.ProjectID);
             return View(interestedVolunteers);
         }
 

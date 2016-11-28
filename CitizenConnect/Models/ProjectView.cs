@@ -21,8 +21,11 @@ namespace CitizenConnect.Models
         public virtual ApplicationUser ApplicationUser { get; set; }
 
         //Volunteers
+        [ForeignKey("InterestedVolunteers")]
         [Display(Name = "Volunteer")]
-        public virtual ICollection<InterestedVolunteers>InterestedVolunteers { get; set; }
+        public int InterestedUserID { get; set; }
+        public virtual ICollection<InterestedVolunteers> InterestedVolunteers { get; set; }
+        
 
        
 
