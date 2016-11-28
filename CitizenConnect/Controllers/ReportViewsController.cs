@@ -26,12 +26,18 @@ namespace CitizenConnect.Controllers
             }
         }
 
+        public ActionResult WeeklyReport()
+        {
+            return View();
+        }
+
         // GET: ReportViews
         [Authorize]
         public ActionResult Index()
         {
             return View(db.ReportViews.ToList());
         }
+
 
         // GET: ReportViews/Details/5
         [Authorize]
