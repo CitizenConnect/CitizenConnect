@@ -50,7 +50,7 @@ namespace CitizenConnect.Controllers
         {
             if (ModelState.IsValid)
             {
-                var body = "<p>11/28/2016</p><p>Dear Council Person,</p><p>Following are concerns submitted by concerned citizens on citizenconnect.com.</p><p> For the week of November 28 - December 4: </p><p>- There have been 14 reported incidents of street light outtages. Please click *here* to view the location.</p><p>- There have been 19 reports of potholes. Please click *here* to view the location.</p><p></p><p>Thank you for prompt attention to these concerns. We apprecite the time and effort each of you take in making Cleveland a great place to live.</p><p></p><p>Sincerely,</p><p>Citizen Connect Administration</p>";
+                var body = "<p>11/28/2016</p><p>Dear Council Person,</p><p>Following are concerns submitted by citizens on citizenconnect.com.</p><p> For the week of November 28 - December 4: </p><p>- There have been 14 reported incidents of street light outtages. Please click *here* to view the location.</p><p>- There have been 19 reports of potholes. Please click *here* to view the location.</p><p></p><p>Thank you for prompt attention to these concerns. We apprecite the time and effort each of you take in making Cleveland a great place to live.</p><p></p><p>Sincerely,</p><p>Citizen Connect Administration</p>";
                 var message = new MailMessage();
                 message.Bcc.Add(new MailAddress("CitizenConnectCle@gmail.com"));  // replace with valid value 
                 message.Bcc.Add(new MailAddress("citizenconnectcounciltest@gmail.com"));
