@@ -2,7 +2,6 @@
 
 
 <body id="suggestBody">
-    <h2>Community Projects</h2>
     <div class="panel panel-default" id="panelsPanel">
         <div class="panel-heading" id="panelHeading">
             <h3 class="panel-title">Community Projects</h3>
@@ -18,7 +17,7 @@
                     <div class="thumbnail">
                         <div class="caption">
                             <h3>@Html.DisplayFor(modelItem => item.ProjectName)</h3>
-                            @Html.ActionLink("Details", "Details", new { id = item.ProjectID }) |
+                          <h6 id="detailButton"><button>@Html.ActionLink("Details", "Details", new { id = item.ProjectID })</button></h6> 
 
                             <h3>@Html.DisplayNameFor(model => model.ApplicationUser)</h3>
                             <p>

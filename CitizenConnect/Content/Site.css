@@ -212,3 +212,11 @@ div#wardInput {
 #weeklyReport{
     margin-top:50px;
 }
+#thankyou{
+    text-align:center;
+    float:none;
+
+}
+#detailButton {
+    text-align:left;
+}

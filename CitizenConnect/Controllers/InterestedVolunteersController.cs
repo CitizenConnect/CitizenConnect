@@ -141,5 +141,9 @@ namespace CitizenConnect.Controllers
             }
             base.Dispose(disposing);
         }
+        public ActionResult ThankYou()
+        {
+            return View();
+        }
     }
 }
