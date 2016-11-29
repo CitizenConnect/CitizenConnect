@@ -68,7 +68,7 @@ namespace CitizenConnect.Controllers
             {
                 db.InterestedVolunteers.Add(interestedVolunteers);
                 db.SaveChanges();
-                return RedirectToAction("Create");
+                return RedirectToAction("ThankYou");
             }
             
             return View(interestedVolunteers);
