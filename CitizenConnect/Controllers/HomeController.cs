@@ -24,7 +24,6 @@ namespace CitizenConnect.Controllers
 
             return View();
         }
-
         public ActionResult Ward()
         {
             ViewBag.Message = "Your City Council Member.";

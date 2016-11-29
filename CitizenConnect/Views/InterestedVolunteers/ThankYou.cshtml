@@ -1,0 +1,21 @@
+﻿@model IEnumerable<CitizenConnect.Models.InterestedVolunteers>
+
+
+<body id="suggestBody">
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Community Projects</h3>
+        </div>
+        <div class="panel-body">
+            <h2 id="thankyou">
+                Thank you for joining.
+            </h2>
+            <div class="col-sm-12">
+                <h6 id="submitButton"><button>@Html.ActionLink("Community Projects", "Index", "ProjectViews")</button></h6>
+            </div>
+            <div class="col-sm-12">
+                <h6 id="submitButton"><button>@Html.ActionLink("Home", "Index", "Home")</button></h6>
+            </div>
+        </div>
+    </div>
+    </body>
