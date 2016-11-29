@@ -1,34 +1,34 @@
-
-﻿html, body {
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
-html{
-  display:flex;
+#homePage{
+    overflow:hidden;
 }
-
-/*.layoutBody {
-height:100%;
-width:100%;
-}*/
-/*﻿div#homePage{
-    overflow-y:hidden;
-    padding:0;
-    margin:0;
-}*/
-.row {
-   margin:0;
+#resourcePage{
+    overflow-x:hidden;
+}
+.layoutBody {
+    font-family: 'Lalezar', cursive;
+    color: #35324c;
+    overflow-x:hidden;
 }
 
+#navvyNav {
+    margin-bottom: 0;
+    background-color: #35324c;
+    font-family: 'Lalezar', cursive;
+}
 
-.container-fluid{
-    margin-top:0;
-    padding-top:0;
-    padding-bottom:0;
-    padding-left:0;
-    padding-right:0;
-    width:100%;
-    height:100%;
-    background-position:center;
-    margin-left:0;
+.background-image {
+    background-image: url('Image/smartphone.jpg');
+    background-size: cover;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    opacity: .5;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -44,148 +44,162 @@ select,
 textarea {
     max-width: 280px;
 }
-h2 {
-    text-align: center;
-    font-size:22px;
-    color:black;
-}
+
 h6#submitButton {
-    text-align:center;
+    text-align: center;
     font-size: 15px;
-    color:black;
-    
-  }
+    color: #35324c;
+}
 
 button {
-    border-radius:6px;
-    padding:10px;
+    border-radius: 6px;
+    padding: 10px;
 }
 
 #appName {
-    text-align:center;
-    font-size:70px;
-    color:#35324c;
+    text-align: center;
+    font-size: 70px;
+    color: #35324c;
     margin-top: 100px;
     font-family: 'Lalezar', cursive;
-    }
-#landingPage{
-    background-size:cover;
-    background-repeat:no-repeat;
-    width:100%;
-    height:100%;
-    background-position:center;
-    position:relative;
-    margin-top:0;
-    margin-bottom:60px;
-}
-/*LANDING PAGE IMAGE*/
-.background-image {
-    background-image: url('Image/smartphone.jpg');
-    background-size:cover;
-    background-repeat:no-repeat;
-    width:100%;
-    height:100%;
-    background-position:center;
-    position:fixed;
-    margin-top:0;
-    margin-bottom:0;
-    } 
-.col-sm-12{
-    position:relative;
-    margin-left:7%;
-    margin-right:7%;
-    margin-bottom:0;
-    margin-top:0;
-    padding:0;
-    height:100%;
-    width:100%;
-   
-}
-#buttonContext{
- font-family: 'Lalezar', cursive;
- font-size:30px;
- color:#35324c;
-}
-.container {
-    padding-right: 0;
-    padding-left: 0;
-    margin-right: auto;
-    margin-left: auto;
 }
 
-/*LANDING PAGE IMAGE*/
-#image {
-    opacity:.50;
-    }
-.resourcePage{
-   
+#buttonContext {
+    text-align: center;
+    font-family: 'Lalezar', cursive;
+    font-size: 30px;
+    color: #35324c;
 }
-/*RESOURCE PAGE IMAGE*/
-#image1 {
-    opacity:.50;
-    }
 
+#resourceTitle {
+    color: #35324c;
+    text-align: center;
+    font-family: 'Lalezar', cursive;
+    font-size: 70px;
+}
 /*RESOURCE PAGE PANELS*/
-#resourcePagePanels{
-    margin-top:70px;
-    margin-left:10%;
-    margin-right:10%;
-    width:95%;
-    position:relative;
-    margin-bottom:10%;
-    box-sizing:content-box;
+#resourcePagePanels {
+    margin-top: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 95%;
+    position: relative;
+    margin-bottom: 10%;
+    box-sizing: content-box;
 }
-/*#copyRight{
-    color:white;
-    margin-left:10px;
-}*/
-
 
 body#WardLookup {
     margin-top: 50px;
-    padding-top:50px;
-
+    padding-top: 50px;
 }
+
 div#wardInput {
-    text-align:center;
+    text-align: center;
 }
 
-#titleResource{
+#titleResource {
     font-family: 'Lalezar', cursive;
-    text-align:center;
-    font-size:70px;
-    color:#35324c;
+    text-align: center;
+    font-size: 70px;
+    color: #35324c;
 }
 
-#panelsPanel{
-    background-color:#dfd7c6;
-    border:none;
+#panelsPanel {
+    background-color: #dfd7c6;
+    border: none;
 }
-#panelHeading{
-    background-color:#c13d50;
-    color:white;
+
+#panelHeading {
+    background-color: #c13d50;
+    color: white;
     font-family: 'Lalezar', cursive;
 }
-.panel-title{
-    font-size:30px;
+
+.panel-title {
+    font-size: 30px;
 }
-#navvyNav{
-    background-color:#35324c;
-    font-family: 'Lalezar', cursive;
+
+.about {
+    padding-left: 5%;
+    padding-right: 5%;
 }
-#linksColor{
-    color:#35324c;
+
+#linksColor {
+    color: #35324c;
 }
+
 #linksColor:hover {
-    color:#dc98a4;
-}
+        color: #dc98a4;
+    }
 
 #map_canvas {
- width: 500px;
- height: 500px;
+    width: 500px;
+    height: 500px;
 }
 
 #current {
- padding-top: 25px;
+    padding-top: 25px;
 }
 
+.content {
+    position: relative;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+#copyRight {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-left: 10px;
+}
+
+#address {
+    margin-bottom: 10px;
+}
+
+#suggestBody {
+    margin-top: 50px;
+    overflow-x:hidden;
+}
+
+#registerBody {
+    margin-top: 50px;
+}
+
+#loginBody {
+    margin-top: 50px;
+}
+
+#reportBody {
+    margin-top: 50px;
+    overflow-x:hidden;
+}
+
+#reportPanelBody {
+    margin: auto;
+}
+#WardLookup{
+    overflow-x:hidden;
+}
+
+.form-group {
+    font-size: 20px;
+}
+
+.headshot {
+    padding-top: 2%;
+    padding-bottom: 3%;
+    max-width: 210px;
+}
+
+.bio {
+    padding-top: 1%;
+}
+
+.social-links-col {
+    padding-top: 2%;
+}
+#weeklyReport{
+    margin-top:50px;
+}

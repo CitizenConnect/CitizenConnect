@@ -4,23 +4,29 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
 
-<div>
-    <h4>ReportType</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ReportTypeName)
-        </dt>
+<div class="panel panel-default" id="panelsPanel">
+    <div class="panel-heading" id="panelHeading">
+        <h3 class="panel-title">Details</h3>
+    </div>
+    <div class="panel-body">
+        <div>
 
-        <dd>
-            @Html.DisplayFor(model => model.ReportTypeName)
-        </dd>
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.ReportTypeName)
+                </dt>
 
-    </dl>
+                <dd>
+                    @Html.DisplayFor(model => model.ReportTypeName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ReportTypeID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ReportTypeID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

@@ -14,7 +14,7 @@ namespace CitizenConnect.Models
         public bool IfInterested { get; set; }
 
         //ApplicationUser and ProjectID are Primary Key
-        [Display(Name = "Volunteers")]
+        [Display(Name = "volunteers")]
         public virtual ApplicationUser ApplicationUser { get; set;  }
                 
         [ForeignKey("ProjectView")]
