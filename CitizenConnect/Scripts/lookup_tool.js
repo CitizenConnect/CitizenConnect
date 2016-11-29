@@ -212,7 +212,7 @@ function addressSearch() {
             document.getElementById("CouncilEmail").innerHTML = "";
             document.getElementById("CouncilPhone").innerHTML = "";
             //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-            document.getElementById("CityCouncilWebsite").innerHTML = "http://www.clevelandcitycouncil.org/find-my-ward";
+            document.getElementById("CityCouncilWebsite").innerHTML = '<a target="_blank" href="http://www.clevelandcitycouncil.org/find-my-ward">Find My Ward</a>';
         }
         else
         {
@@ -238,7 +238,7 @@ function addressSearch() {
                 document.getElementById("CouncilEmail").innerHTML = "";
                 document.getElementById("CouncilPhone").innerHTML = "";
                 //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-                document.getElementById("CityCouncilWebsite").innerHTML = "http://www.clevelandcitycouncil.org/find-my-ward";
+                document.getElementById("CityCouncilWebsite").innerHTML = '<a target="_blank" href="http://www.clevelandcitycouncil.org/find-my-ward">Find My Ward</a>';
             }
 
         }
