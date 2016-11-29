@@ -4,31 +4,39 @@
     ViewBag.Title = "Details";
     ViewBag.LLL = "Thank you for Joining!!";
 }
+<body id="suggestBody">
 
-<h2>Details</h2>
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Interested Volunteers</h3>
+        </div>
+        <div class="panel-body">
+            <div>
 
-<div>
-    <h4>InterestedVolunteers</h4>
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.ProjectView.ProjectName)
-        </dt>
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ProjectView.ProjectName)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProjectView.ProjectName)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.ProjectView.ProjectName)
+                    </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.IfInterested)
-        </dt>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.IfInterested)
+                    </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.IfInterested)
-        </dd>
+                    <dd>
+                        @Html.DisplayFor(model => model.IfInterested)
+                    </dd>
 
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.InterestedUserID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.InterestedUserID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </div>
+    </div>
+   
+</body>

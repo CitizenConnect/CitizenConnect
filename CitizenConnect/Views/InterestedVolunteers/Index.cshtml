@@ -3,44 +3,53 @@
 @{
     ViewBag.Title = "Index";
 }
+<body id="suggestBody">
+  
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Volunteer Index</h3>
+        </div>
+        <div class="panel-body">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ProjectView.ProjectName)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.IfInterested)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ApplicationUser)
+                    </th>
+                    <th></th>
+                </tr>
 
-<h2>Index</h2>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ProjectView.ProjectName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.IfInterested)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ApplicationUser.userFirstName)
+                            @Html.DisplayFor(modelItem => item.ApplicationUser.userLastName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.InterestedUserID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.InterestedUserID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.InterestedUserID })
+                        </td>
+                    </tr>
+                }
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ProjectView.ProjectName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.IfInterested)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ApplicationUser)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ProjectView.ProjectName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.IfInterested)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ApplicationUser.userFirstName)
-            @Html.DisplayFor(modelItem => item.ApplicationUser.userLastName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.InterestedUserID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.InterestedUserID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.InterestedUserID })
-        </td>
-    </tr>
-}
-
-</table>
+            </table>
+        </div>
+    </div>
+    
+    </body>

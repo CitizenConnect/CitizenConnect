@@ -4,101 +4,107 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <script>
-        jQuery(function ($) {
-            // Asynchronously Load the map API 
-            var script = document.createElement('script');
-            script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc&sensor=false&callback=initialize";
-            document.body.appendChild(script);
-        });
-
-        function initialize() {
-            var map;
-            var bounds = new google.maps.LatLngBounds();
-            var mapOptions = {
-                mapTypeId: 'roadmap'
-            };
-
-            // Display a map on the page
-            map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
-            map.setTilt(45);
-
-            // Multiple Markers
-            var markers = [
-                ['Pothole', 41.49273557009205, -81.71013616943361],
-                ['Street Light Outage', 41.48971384162972, -81.69571661376955],
-                ['Street Light Outage', 41.485277431726, -81.70618795776369],
-                ['Street Light Outage', 41.49646431730562, -81.68318533325197],
-                ['Pothole', 41.479361745981016, -81.71374105834963],
-                ['Pothole', 41.48161234224616, -81.72215246582033],
-                ['Street Light Outage', 41.47209500166081, -81.68996595764162],
-                ['Pothole', 41.50128565494123, -81.67202734375002]
-            ];
-
-            // Info Window Content
-            var infoWindowContent = [
-                ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>'],
-                ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
-                ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
-                ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
-                ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>'],
-                ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>'],
-                ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
-                ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>']
-            ];
-
-            // Display multiple markers on a map
-            var infoWindow = new google.maps.InfoWindow(), marker, i;
-
-            // Loop through our array of markers & place each one on the map  
-            for (i = 0; i < markers.length; i++) {
-                var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
-                bounds.extend(position);
-                marker = new google.maps.Marker({
-                    position: position,
-                    map: map,
-                    title: markers[i][0]
-                });
-
-                // Allow each marker to have an info window    
-                google.maps.event.addListener(marker, 'click', (function (marker, i) {
-                    return function () {
-                        infoWindow.setContent(infoWindowContent[i][0]);
-                        infoWindow.open(map, marker);
-                    }
-                })(marker, i));
-
-                // Automatically center the map fitting all markers on the screen
-                map.fitBounds(bounds);
-            }
-
-            // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
-            var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
-                this.setZoom(13);
-                google.maps.event.removeListener(boundsListener);
-            });
-
-        }
-    </script>
-
-    <div class="form-horizontal">
-        <h4>Weekly Report</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-        <div id="map_wrapper">
-            <div id="map_canvas" class="mapping"></div>
+<body id="weeklyReport">
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Weekly Reports</h3>
         </div>
+        <div class="panel-body">
 
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <script>
+                    jQuery(function ($) {
+                        // Asynchronously Load the map API
+                        var script = document.createElement('script');
+                        script.src = "//maps.googleapis.com/maps/api/js?key=AIzaSyA-UEiyhrkeVKo2UfwX3WNKqToGvgL9yFc&sensor=false&callback=initialize";
+                        document.body.appendChild(script);
+                    });
+
+                    function initialize() {
+                        var map;
+                        var bounds = new google.maps.LatLngBounds();
+                        var mapOptions = {
+                            mapTypeId: 'roadmap'
+                        };
+
+                        // Display a map on the page
+                        map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+                        map.setTilt(45);
+
+                        // Multiple Markers
+                        var markers = [
+                            ['Pothole', 41.49273557009205, -81.71013616943361],
+                            ['Street Light Outage', 41.48971384162972, -81.69571661376955],
+                            ['Street Light Outage', 41.485277431726, -81.70618795776369],
+                            ['Street Light Outage', 41.49646431730562, -81.68318533325197],
+                            ['Pothole', 41.479361745981016, -81.71374105834963],
+                            ['Pothole', 41.48161234224616, -81.72215246582033],
+                            ['Street Light Outage', 41.47209500166081, -81.68996595764162],
+                            ['Pothole', 41.50128565494123, -81.67202734375002]
+                        ];
+
+                        // Info Window Content
+                        var infoWindowContent = [
+                            ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>'],
+                            ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
+                            ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
+                            ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
+                            ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>'],
+                            ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>'],
+                            ['<div class="info_content">' + '<h3>Street Light Outage</h3>' + '</div>'],
+                            ['<div class="info_content">' + '<h3>Pothole</h3>' + '</div>']
+                        ];
+
+                        // Display multiple markers on a map
+                        var infoWindow = new google.maps.InfoWindow(), marker, i;
+
+                        // Loop through our array of markers & place each one on the map
+                        for (i = 0; i < markers.length; i++) {
+                            var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+                            bounds.extend(position);
+                            marker = new google.maps.Marker({
+                                position: position,
+                                map: map,
+                                title: markers[i][0]
+                            });
+
+                            // Allow each marker to have an info window
+                            google.maps.event.addListener(marker, 'click', (function (marker, i) {
+                                return function () {
+                                    infoWindow.setContent(infoWindowContent[i][0]);
+                                    infoWindow.open(map, marker);
+                                }
+                            })(marker, i));
+
+                            // Automatically center the map fitting all markers on the screen
+                            map.fitBounds(bounds);
+                        }
+
+                        // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+                        var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function (event) {
+                            this.setZoom(13);
+                            google.maps.event.removeListener(boundsListener);
+                        });
+
+                    }
+                </script>
+
+                <div class="form-horizontal">
+                 
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div id="map_wrapper">
+                        <div id="map_canvas" class="mapping"></div>
+                    </div>
+
+                </div>
+            }
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
     </div>
-}
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+</body>

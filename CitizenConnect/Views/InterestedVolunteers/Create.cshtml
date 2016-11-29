@@ -3,50 +3,58 @@
 @{
     ViewBag.Title = "Create";
 }
+<body id="suggestBody">
+   
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Join a Community Project</h3>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
 
-<h2>Create</h2>
+                <div class="form-horizontal">
+                    
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    @*<div class="form-group">
+                            @Html.LabelFor(model => model.IfInterested, htmlAttributes: new { @class = "control-label col-md-2" })
+                            <div class="col-md-10">
+                                <div class="checkbox">
+                                    @Html.EditorFor(model => model.IfInterested)
+                                    @Html.ValidationMessageFor(model => model.IfInterested, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>*@
 
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-
-    <div class="form-horizontal">
-        <h4>Join a Community Project</h4>
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @*<div class="form-group">
-                @Html.LabelFor(model => model.IfInterested, htmlAttributes: new { @class = "control-label col-md-2" })
-                <div class="col-md-10">
-                    <div class="checkbox">
-                        @Html.EditorFor(model => model.IfInterested)
-                        @Html.ValidationMessageFor(model => model.IfInterested, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.ProjectID, "ProjectID", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.DropDownList("ProjectID", null, htmlAttributes: new { @class = "form-control" })
+                            @Html.ValidationMessageFor(model => model.ProjectID, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Join" class="btn btn-default" id="button" />
+                        </div>
+                        <script>
+                    //$(document).ready(function () {
+                    $("#button").click(function () {
+                        alert("Thank you for joining!");
+                    });
+                    //});
+                        </script>
                     </div>
                 </div>
-            </div>*@
+            }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.ProjectID , "ProjectID", htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.DropDownList("ProjectID", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.ProjectID, "", new { @class = "text-danger" })
+            <div>
+                @Html.ActionLink("Back to Current Projects", "Index", "ProjectViews")
             </div>
-        </div>
-        <div>
-                    </div>
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Join" class="btn btn-default" id="button" />
-            </div>
-            <script>
-                    //$(document).ready(function () {
-                $("#button").click(function () {
-                    alert("Thank you for joining!");
-                  });
-                    //});
-           </script>
         </div>
     </div>
-}
-
-<div>
-    @Html.ActionLink("Back to Current Projects", "Index", "ProjectViews")
-</div>
+    
+    </body>

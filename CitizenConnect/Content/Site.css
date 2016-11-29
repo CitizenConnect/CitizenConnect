@@ -1,27 +1,35 @@
 body {
-    padding-top:50px;
-    padding-bottom:20px;
+    padding-top: 50px;
+    padding-bottom: 20px;
 }
-.layoutBody{
- font-family: 'Lalezar', cursive;
- color:#35324c;
+#homePage{
+    overflow:hidden;
 }
-#navvyNav{
-    margin-bottom:0;
-    background-color:#35324c;
+#resourcePage{
+    overflow-x:hidden;
+}
+.layoutBody {
+    font-family: 'Lalezar', cursive;
+    color: #35324c;
+    overflow-x:hidden;
+}
+
+#navvyNav {
+    margin-bottom: 0;
+    background-color: #35324c;
     font-family: 'Lalezar', cursive;
 }
 
 .background-image {
     background-image: url('Image/smartphone.jpg');
-    background-size:cover;
-    top:50px;
-    width:100%;
-    height:100%;
-    position:fixed;
-    z-index:0;
-    opacity:.5;
-    } 
+    background-size: cover;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 0;
+    opacity: .5;
+}
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -38,134 +46,160 @@ textarea {
 }
 
 h6#submitButton {
-    text-align:center;
+    text-align: center;
     font-size: 15px;
-    color:#35324c;
-  }
+    color: #35324c;
+}
 
 button {
-    border-radius:6px;
-    padding:10px;
+    border-radius: 6px;
+    padding: 10px;
 }
 
 #appName {
-    text-align:center;
-    font-size:70px;
-    color:#35324c;
+    text-align: center;
+    font-size: 70px;
+    color: #35324c;
     margin-top: 100px;
     font-family: 'Lalezar', cursive;
-    }
-
-#buttonContext{
-     text-align: center;
- font-family: 'Lalezar', cursive;
- font-size:30px;
- color:#35324c;
 }
-#resourceTitle{
-color:#35324c;
- text-align: center;
- font-family: 'Lalezar', cursive;
- font-size:70px;
+
+#buttonContext {
+    text-align: center;
+    font-family: 'Lalezar', cursive;
+    font-size: 30px;
+    color: #35324c;
+}
+
+#resourceTitle {
+    color: #35324c;
+    text-align: center;
+    font-family: 'Lalezar', cursive;
+    font-size: 70px;
 }
 /*RESOURCE PAGE PANELS*/
-#resourcePagePanels{
-    margin-top:70px;
-    margin-left:10%;
-    margin-right:10%;
-    width:95%;
-    position:relative;
-    margin-bottom:10%;
-    box-sizing:content-box;
+#resourcePagePanels {
+    margin-top: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    width: 95%;
+    position: relative;
+    margin-bottom: 10%;
+    box-sizing: content-box;
 }
+
 body#WardLookup {
     margin-top: 50px;
-    padding-top:50px;
+    padding-top: 50px;
 }
+
 div#wardInput {
-    text-align:center;
+    text-align: center;
 }
 
-#titleResource{
+#titleResource {
     font-family: 'Lalezar', cursive;
-    text-align:center;
-    font-size:70px;
-    color:#35324c;
+    text-align: center;
+    font-size: 70px;
+    color: #35324c;
 }
 
-#panelsPanel{
-    background-color:#dfd7c6;
-    border:none;
+#panelsPanel {
+    background-color: #dfd7c6;
+    border: none;
 }
-#panelHeading{
-    background-color:#c13d50;
-    color:white;
+
+#panelHeading {
+    background-color: #c13d50;
+    color: white;
     font-family: 'Lalezar', cursive;
 }
-.panel-title{
-    font-size:30px;
+
+.panel-title {
+    font-size: 30px;
 }
+
 .about {
     padding-left: 5%;
     padding-right: 5%;
 }
 
-#linksColor{
-    color:#35324c;
-}
-#linksColor:hover {
-    color:#dc98a4;
+#linksColor {
+    color: #35324c;
 }
 
+#linksColor:hover {
+        color: #dc98a4;
+    }
+
 #map_canvas {
- width: 500px;
- height: 500px;
+    width: 500px;
+    height: 500px;
 }
 
 #current {
- padding-top: 25px;
-}
-.content{
-    position:relative;
-    margin-left:15%;
-    margin-right:15%;
+    padding-top: 25px;
 }
 
-#copyRight{
-    position:relative;
-    bottom:0;
-    width:100%;
-    margin-left:10px;
+.content {
+    position: relative;
+    margin-left: 15%;
+    margin-right: 15%;
 }
-#address{
-    margin-bottom:10px;
+
+#copyRight {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-left: 10px;
 }
-#suggestBody{
-    margin-top:50px;
+
+#address {
+    margin-bottom: 10px;
 }
-#registerBody{
-    margin-top:50px;
+
+#suggestBody {
+    margin-top: 50px;
+    overflow-x:hidden;
 }
-#loginBody{
-    margin-top:50px;
+
+#registerBody {
+    margin-top: 50px;
 }
-#reportBody{
-    margin-top:50px;
+
+#loginBody {
+    margin-top: 50px;
 }
-#reportPanelBody{   
-  margin: auto;
+
+#reportBody {
+    margin-top: 50px;
+    overflow-x:hidden;
 }
-.form-group{
-    font-size:1.25em;
+
+#reportPanelBody {
+    margin: auto;
 }
+#WardLookup{
+    overflow-x:hidden;
+}
+
+.form-group {
+    font-size: 20px;
+}
+
 .headshot {
     padding-top: 2%;
-    padding-bottom:3%;
+    padding-bottom: 3%;
     max-width: 210px;
 }
+
 .bio {
     padding-top: 1%;
 }
+
 .social-links-col {
     padding-top: 2%;
+}
+#weeklyReport{
+    margin-top:50px;
 }
