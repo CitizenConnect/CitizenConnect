@@ -204,6 +204,7 @@ function addressSearch() {
         var councilPhone = null;
         //var cityHallAddress = null;
         var cityCouncilWebsite = null;
+        //document.getElementById("CityCouncilWebsite").innerHTML = '<a id="CityCouncilWebsite" target="_blank" href="http://www.clevelandcitycouncil.org/">Ward Webpage</a>';
 
         if (local_people[0] == undefined) //does not contain 'Ward' display not found message  
         {
@@ -212,7 +213,8 @@ function addressSearch() {
             document.getElementById("CouncilEmail").innerHTML = "";
             document.getElementById("CouncilPhone").innerHTML = "";
             //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-            document.getElementById("CityCouncilWebsite").innerHTML = '<a target="_blank" href="http://www.clevelandcitycouncil.org/find-my-ward">Find My Ward</a>';
+            document.getElementById("CityCouncilWebsite").href = "http://www.clevelandcitycouncil.org/find-my-ward";
+            document.getElementById("CityCouncilWebsite").innerHTML = "Find My Ward";
         }
         else
         {
@@ -231,6 +233,8 @@ function addressSearch() {
                 //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
                 console.log(cityCouncilWebsite);
                 document.getElementById("CityCouncilWebsite").href = cityCouncilWebsite;
+                document.getElementById("CityCouncilWebsite").innerHTML = "Ward Webpage";
+
             }
             else
             {
@@ -239,7 +243,8 @@ function addressSearch() {
                 document.getElementById("CouncilEmail").innerHTML = "";
                 document.getElementById("CouncilPhone").innerHTML = "";
                 //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-                document.getElementById("CityCouncilWebsite").innerHTML = '<a target="_blank" href="http://www.clevelandcitycouncil.org/find-my-ward">Find My Ward</a>';
+                document.getElementById("CityCouncilWebsite").href = "http://www.clevelandcitycouncil.org/find-my-ward";
+                document.getElementById("CityCouncilWebsite").innerHTML = "Find My Ward";
             }
 
         }
