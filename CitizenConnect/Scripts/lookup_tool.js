@@ -195,24 +195,35 @@ function addressSearch() {
             })
         }
         //============== this pulls out the council ward number============== 
+
+        // sort by office name (places Council ahead of Mayor as order of data returned from API is not sorted)
         local_people.sort(function (a, b) {
-            return (a.office.name) - (b.office.name);
+            var nameA = a.office.name.toUpperCase(); // ignore upper and lowercase
+            var nameB = b.office.name.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            // names must be equal
+            return 0;
         });
+
         var ward = null;
         var councilPerson = null;
         var councilEmail = null;
         var councilPhone = null;
-        //var cityHallAddress = null;
         var cityCouncilWebsite = null;
 
-        if (local_people[0] == undefined) //does not contain 'Ward' display not found message  
+        if (local_people[0] == undefined) //does not contain local data then display not found message  
         {
             document.getElementById("WardNumber").innerHTML = "No Cleveland City Ward assignment found";
             document.getElementById("CouncilPerson").innerHTML = "";
             document.getElementById("CouncilEmail").innerHTML = "";
             document.getElementById("CouncilPhone").innerHTML = "";
-            //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-            document.getElementById("CityCouncilWebsite").innerHTML = "http://www.clevelandcitycouncil.org/find-my-ward";
+            document.getElementById("CityCouncilWebsite").href = "http://www.clevelandcitycouncil.org/find-my-ward";
+            document.getElementById("CityCouncilWebsite").innerHTML = "Find My Ward";
         }
         else
         {
@@ -222,23 +233,23 @@ function addressSearch() {
                 var councilPerson = (local_people[0].person.name);
                 var councilEmail = (local_people[0].person.emails[0]);
                 var councilPhone = (local_people[0].person.phones[0]);
-                //var cityHallAddress = (local_people[0].person.address[0]);
                 var cityCouncilWebsite = (local_people[0].urls[0]);
                 document.getElementById("WardNumber").innerHTML = ward;
                 document.getElementById("CouncilPerson").innerHTML = councilPerson;
                 document.getElementById("CouncilEmail").innerHTML = councilEmail;
                 document.getElementById("CouncilPhone").innerHTML = councilPhone;
-                //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
                 document.getElementById("CityCouncilWebsite").href = cityCouncilWebsite;
+                document.getElementById("CityCouncilWebsite").innerHTML = "Ward Webpage";
+
             }
-            else
+            else    //no ward data found
             {
                 document.getElementById("WardNumber").innerHTML = "No Cleveland City Ward assignment found";
                 document.getElementById("CouncilPerson").innerHTML = "";
                 document.getElementById("CouncilEmail").innerHTML = "";
                 document.getElementById("CouncilPhone").innerHTML = "";
-                //document.getElementById("CityHallAddress").innerHTML = cityHallAddress;
-                document.getElementById("CityCouncilWebsite").innerHTML = "http://www.clevelandcitycouncil.org/find-my-ward";
+                document.getElementById("CityCouncilWebsite").href = "http://www.clevelandcitycouncil.org/find-my-ward";
+                document.getElementById("CityCouncilWebsite").innerHTML = "Find My Ward";
             }
 
         }
