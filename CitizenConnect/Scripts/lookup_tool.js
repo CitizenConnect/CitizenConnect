@@ -195,12 +195,20 @@ function addressSearch() {
             })
         }
         //============== this pulls out the council ward number============== 
-        local_people.sort(function(a, b) {
-            return (a.office.name) - (b.office.name);
+
+        // sort by office name (places Council ahead of Mayor as order of data returned from API is not sorted)
+        local_people.sort(function (a, b) {
+            var nameA = a.office.name.toUpperCase(); // ignore upper and lowercase
+            var nameB = b.office.name.toUpperCase(); // ignore upper and lowercase
+            if (nameA < nameB) {
+                return -1;
+            }
+            if (nameA > nameB) {
+                return 1;
+            }
+            // names must be equal
+            return 0;
         });
-        console.log(local_people[0].office.name);
-        console.log(local_people[1].office.name);
-        console.log(local_people);
 
         var ward = null;
         var councilPerson = null;
