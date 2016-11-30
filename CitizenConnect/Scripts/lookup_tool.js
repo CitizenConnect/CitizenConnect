@@ -195,9 +195,13 @@ function addressSearch() {
             })
         }
         //============== this pulls out the council ward number============== 
-        local_people.sort(function (a, b) {
+        local_people.sort(function(a, b) {
             return (a.office.name) - (b.office.name);
         });
+        console.log(local_people[0].office.name);
+        console.log(local_people[1].office.name);
+        console.log(local_people);
+
         var ward = null;
         var councilPerson = null;
         var councilEmail = null;
