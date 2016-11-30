@@ -4,45 +4,46 @@
     ViewBag.Title = "Details";
 }
 
-
-<div class="panel panel-default" id="panelsPanel">
-    <div class="panel-heading" id="panelHeading">
-        <h3 class="panel-title">Details</h3>
-    </div>
-    <div class="panel-body">
-        <div>
-
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Longitude)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Longitude)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Latitude)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Latitude)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.ReportTypeID)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.ReportTypeID)
-                </dd>
-
-            </dl>
+<body id="reportTypes">
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Details</h3>
         </div>
-        <p>
-            @Html.ActionLink("Edit", "Edit", new { id = Model.ReportID }) |
-            @Html.ActionLink("Back to List", "Index")
-        </p>
+        <div class="panel-body">
+            <div>
 
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Longitude)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Longitude)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Latitude)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Latitude)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ReportTypeID)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ReportTypeID)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.ReportID }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+
+        </div>
     </div>
-</div>
+    </body>

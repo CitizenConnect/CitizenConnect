@@ -4,38 +4,39 @@
     ViewBag.Title = "Index";
 }
 
-
-<div class="panel panel-default" id="panelsPanel">
-    <div class="panel-heading" id="panelHeading">
-        <h3 class="panel-title">Reports</h3>
-    </div>
-    <div class="panel-body">
-        <p>
-            @Html.ActionLink("Create New", "Create")
-        </p>
-        <table class="table">
-            <tr>
-                <th>
-                    @Html.DisplayNameFor(model => model.ReportTypeName)
-                </th>
-                <th></th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
+<body id="reportTypes">
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Reports</h3>
+        </div>
+        <div class="panel-body">
+            <p>
+                @Html.ActionLink("Create New", "Create")
+            </p>
+            <table class="table">
                 <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.ReportTypeName)
-                    </td>
-                    <td>
-                        @Html.ActionLink("Edit", "Edit", new { id = item.ReportTypeID }) |
-                        @Html.ActionLink("Details", "Details", new { id = item.ReportTypeID }) |
-                        @Html.ActionLink("Delete", "Delete", new { id = item.ReportTypeID })
-                    </td>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ReportTypeName)
+                    </th>
+                    <th></th>
                 </tr>
-            }
 
-        </table>
+                @foreach (var item in Model)
+            {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.ReportTypeName)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ReportTypeID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ReportTypeID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ReportTypeID })
+                        </td>
+                    </tr>
+                }
 
+            </table>
+
+        </div>
     </div>
-</div>
+</body>

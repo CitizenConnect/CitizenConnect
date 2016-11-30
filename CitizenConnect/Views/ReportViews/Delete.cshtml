@@ -4,52 +4,52 @@
     ViewBag.Title = "Delete";
 }
 
-
-<div class="panel panel-default" id="panelsPanel">
-    <div class="panel-heading" id="panelHeading">
-        <h3 class="panel-title">Are you sure you want to delete this?</h3>
-    </div>
-    <div class="panel-body">
-        <div>
-
-            <dl class="dl-horizontal">
-                <dt>
-                    @Html.DisplayNameFor(model => model.Longitude)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Longitude)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.Latitude)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.Latitude)
-                </dd>
-
-                <dt>
-                    @Html.DisplayNameFor(model => model.ReportTypeID)
-                </dt>
-
-                <dd>
-                    @Html.DisplayFor(model => model.ReportTypeID)
-                </dd>
-
-            </dl>
-
-            @using (Html.BeginForm())
-            {
-                @Html.AntiForgeryToken()
-
-                <div class="form-actions no-color">
-                    <input type="submit" value="Delete" class="btn btn-default" /> |
-                    @Html.ActionLink("Back to List", "Index")
-                </div>
-            }
+<body id="reportTypes">
+    <div class="panel panel-default" id="panelsPanel">
+        <div class="panel-heading" id="panelHeading">
+            <h3 class="panel-title">Are you sure you want to delete this?</h3>
         </div>
+        <div class="panel-body">
+            <div>
 
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Longitude)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Longitude)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Latitude)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Latitude)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ReportTypeID)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ReportTypeID)
+                    </dd>
+
+                </dl>
+
+                @using (Html.BeginForm())
+            {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-actions no-color">
+                        <input type="submit" value="Delete" class="btn btn-default" /> |
+                        @Html.ActionLink("Back to List", "Index")
+                    </div>
+                }
+            </div>
+
+        </div>
     </div>
-</div>
-
+</body>
