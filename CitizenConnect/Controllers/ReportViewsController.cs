@@ -30,6 +30,10 @@ namespace CitizenConnect.Controllers
         {
             return View();
         }
+        public ActionResult ThankYou()
+        {
+            return View();
+        }
 
         // GET: ReportViews
         [Authorize]
@@ -78,7 +82,7 @@ namespace CitizenConnect.Controllers
                 
                 db.ReportViews.Add(reportView);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("ThankYou");
             }
 
             ViewBag.ReportTypeID = new SelectList(db.ReportTypes, "ReportTypeID", "ReportTypeName", reportView.ReportTypeID);
